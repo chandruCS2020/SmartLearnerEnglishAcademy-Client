@@ -10,8 +10,8 @@ function Navbar() {
     return (
         <>
         <RegisterNav />
-            <div className="navbar">
-                <div className="navbar-container container">
+            <div className={click ? 'navbar active' : 'navbar'}>
+                <div className={click ? ' navbar-container container active' : 'navbar-container container'}>
                     <div className="logo">
                         <NavLink to='/' className="navbar-logo">
                         <img src={logo} alt="logo" width="89"/>

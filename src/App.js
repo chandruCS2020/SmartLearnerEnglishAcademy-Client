@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import ScrollButton from './components/ScrollButton/ScrollButton';
 function App() {
   return (
     <>
@@ -16,6 +17,7 @@ function App() {
           <Route path='/Signin' exact component={SignIn} />
         </Switch>
         <Footer />
+        <ScrollButton />
     </Router>
     </>
   );
