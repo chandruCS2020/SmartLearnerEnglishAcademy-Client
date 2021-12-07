@@ -3,11 +3,13 @@ import { NavLink } from 'react-router-dom'
 import { FaBars,FaTimes } from 'react-icons/fa'
 import './Navbar.css'
 import logo from '../images/logo1.png'
+import RegisterNav from './RegisterNav'
 function Navbar() {
     const [click, setclick] = useState(false);
     const handleClick = ()=> setclick(!click);
     return (
         <>
+        <RegisterNav />
             <div className="navbar">
                 <div className="navbar-container container">
                     <div className="logo">
