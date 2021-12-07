@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: 'Nanum Myeongjo', serif; */
+    transition: all 0.5s ease;
+}
+.navbar{
+    background-color: #c1edfe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10%;
+    height: 70px;
+    overflow: visible;
+} 
+.navbar-container{
+    width: 135px;
+    height: 67px;
+    background-color: white;
+    position: relative;
+}
+.logo{
+    position: absolute;
+    top: 0;
+    z-index: 500;
+    width: 135px;
+    background: #fff;
+}
+.navbar-container .logo .navbar-logo{
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    box-shadow: 0px 0px 2px 1px rgb(0 0 0 / 20%);
+    display: block;
+    text-align: center;
+    padding: 10px;
+}
+.navbar-container .logo .navbar-logo img{
+    display: block;
+    width: 100%;
+}
+.submenu{
+    position: relative;
+    display: inline-block;
+}
+.dropdown {
+    
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown a:hover {background-color: #ddd;}
+
+.submenu:hover .dropdown {display: block;top: 60px;}
+
+li,a,button{
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    list-style: none;
+}
+.navbar-logo{
+    text-decoration: none;
+    cursor: pointer;
+}
+.menu-icons{
+    display: none;
+}
+.nav-menu .nav-items{
+    display: inline-block;
+    padding: 20px;
+    font-weight: 800;
+}
+.nav-menu li a{
+    transition: all 0.3s ease 0s;
+    font-size: 20px;
+}
+.nav-menu li a:hover{
+    color: red;
+}
+.nav-lists>*{
+    display: inline-block;
+}
+.sign-up a{
+    font-size: 20px;
+    padding: 10px 7px;
+    background-color: blue;
+    border-radius: 4px;
+}
+.nav-links{
+    color: royalblue;
+} 
+.navbar__link--active{
+    color: red;
+}
+@media screen and (max-width:960px) {
+    .navbar{
+        padding: 0;
+    }
+    .menu-icons{
+        display: block;
+        padding: 0 5%;
+        font-size: 30px;
+    }
+    .nav-lists{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 70px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+    .nav-lists.active{
+        background-color: blueviolet;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+    .nav-menu{
+        display: flex;
+        flex-direction: column;
+    }
+    
+}

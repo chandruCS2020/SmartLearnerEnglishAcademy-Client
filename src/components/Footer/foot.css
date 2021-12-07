@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    transition: all 0.5s ease;
+    color: inherit;
+}
+.footer{
+    background-image: url('../images/world.jpg');
+    background-position: center;
+    padding: 0 10%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.footer .footer-company{
+    text-align: center;
+    padding: 30px 0 ;
+    line-height: 40px;
+    color: #fff;
+    letter-spacing: 5px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.footer-company .f-letter{
+    color: skyblue;
+}
+.footer .footer-content{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 0;
+    
+}
+.footer-content .footer-card{
+    text-align: center;
+    line-height: 25px;
+}
+.footer-content .footer-card .head-name{
+    color: skyblue;
+    letter-spacing: 3px;
+}
+.footer-content .footer-card .card-body p a{
+    color: white;
+}
+.footer-content .footer-card .card-body p a:hover{
+    color: skyblue;
+}
+.footer-social{
+    color: #fff;
+    text-align: center;
+}
+.footer-social .foot-social-head{
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+.footer-social .social{
+    margin: 15px 20px;
+    font-size: 30px;
+    color: skyblue;
+    transition: all 0.3s ease;
+}
+.footer-social .social:hover{
+    color: #fff;
+}
+.footer-copyright{
+    text-align: center;
+    color: white;
+    padding: 20px 0;
+}
+@media screen and (max-width:960px) {
+    .company-name{
+        font-size: 25px;
+    }
+    .company-slogan{
+        font-size: 10px;
+    }
+    .footer-content{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .foot-social-head{
+        font-size: 35px!important;
+    }
+    
+}
