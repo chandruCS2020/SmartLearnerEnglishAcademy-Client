@@ -45,8 +45,8 @@ function Navbar() {
                                 </NavLink>
                                 </li>
                                 <li>
-                                <NavLink to='/Courses/Beginner'  activeClassName="navbar__link--active" className="nav-links">
-                                    Beginner
+                                <NavLink to='/Courses/Rookie'  activeClassName="navbar__link--active" className="nav-links">
+                                    Rookie
                                 </NavLink>
                                 </li>
                                 <li>
