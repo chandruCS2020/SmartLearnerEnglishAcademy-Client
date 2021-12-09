@@ -44,13 +44,11 @@ const handleSubmit = (event) => {
         email : emails,
         password : passwords
     };
-    fetch("http://localhost:3000/signup",{
-        method:"POST",
-        mode:"no-cors",
-        body:JSON.stringify(data1),
-        headers: {
-            'Content-Type': 'application/json',
-        },    'Accept':'*/*'
+    fetch("http://localhost:3000/signup-email",{
+        credentials: 'include', // It can be include, same-origin, omit
+        method: 'POST', // or 'PUT'
+        headers: {"Content-type": "application/json;charset=UTF-8"},
+        body: JSON.stringify(data1)
     })
     .then((data1)=>{
         console.log(data1)

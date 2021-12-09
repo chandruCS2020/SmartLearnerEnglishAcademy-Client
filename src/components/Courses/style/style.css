@@ -10,3 +10,75 @@
     margin-bottom: 50px;
     text-align: center;
 }
+
+
+
+.Courses{
+    line-height: 40px;
+    text-align: center;
+}
+.Courses-head{
+    font-size: 3rem;
+    color: #002347;
+}
+.Courses-list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+.courses-card{
+    background-color: #f9f9ff;
+    padding: 40px 36px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    flex-basis: 30%;
+    transition: all 0.3s ease;
+    box-sizing: border-box; 
+    
+}
+.courses-card:hover{
+    box-shadow: -1px 9px 32px -7px rgba(0,0,0,0.7);
+    -webkit-box-shadow: -1px 9px 32px -7px rgba(0,0,0,0.7);
+    -moz-box-shadow: -1px 9px 32px -7px rgba(0,0,0,0.7);
+}
+.course-link{
+    width: 40%;
+    line-height: 48px;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    color: #fdc632;
+    background-color: #002347;
+}
+.course-title{
+    color: #002347;
+    font-size: 2.5rem;
+}
+.course-description{
+    text-align: justify;
+    line-height: 25px;
+}
+@media screen and (max-width:960px) {
+    .Courses-list{
+        flex-direction: column;
+    }
+    
+    
+}
+@media screen and (max-width:540px)
+{
+    .Courses-head{
+        font-size: 2.5rem;
+    }
+    .course-link{
+        width: 60%;
+    }
+}

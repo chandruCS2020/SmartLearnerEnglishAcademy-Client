@@ -33,24 +33,10 @@ const handleSubmit = (event) => {
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
     const 
-    fName= data.get('firstName'),
-    lName=data.get('lastName'),
-    emails= data.get('email'),
-    passwords= data.get('password');
-
-    const data1 = {
-        firstName : fName,
-        lastName : lName,
-        email : emails,
-        password : passwords
-    };
-    fetch("http://localhost:3000/signup",{
-        method:"POST",
-        mode:"no-cors",
-        body:JSON.stringify(data1),
-        headers: {
-            'Content-Type': 'application/json',
-        },    'Accept':'*/*'
+    emails= data.get('email');
+    fetch("http://localhost:3000/signup-email?email="+emails,{
+        method:"GET",
+        mode:"no-cors"
     })
     .then((data1)=>{
         console.log(data1)
