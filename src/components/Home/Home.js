@@ -27,11 +27,7 @@ function Home() {
             <Courses />
         </section>
         <section className="Section section-3">
-                <div className="feedback">
-                    <div className="feedback-box">
-                        <Feedback />
-                    </div>
-                </div>
+            <Feedback />
         </section>
             
         </>

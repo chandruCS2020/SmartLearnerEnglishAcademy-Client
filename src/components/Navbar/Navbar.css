@@ -1,19 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: 'Nanum Myeongjo', serif; */
     transition: all 0.5s ease;
 }
 .navbar{
-    background-color: #c1edfe;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 10%;
     height: 70px;
     overflow: visible;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 } 
 .navbar-container{
     width: 135px;
@@ -56,7 +57,7 @@
     z-index: 1;
 }
 .dropdown a {
-    color: black;
+    color: gray;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
@@ -72,6 +73,10 @@ li,a,button{
     font-size: 16px;
     list-style: none;
 }
+.nav-links.logout{
+    cursor: pointer;
+    font-weight: 500;
+}
 .navbar-logo{
     text-decoration: none;
     cursor: pointer;
@@ -82,29 +87,25 @@ li,a,button{
 .nav-menu .nav-items{
     display: inline-block;
     padding: 20px;
-    font-weight: 800;
+    font-weight: lighter;
+    
 }
-.nav-menu li a{
+.nav-menu li a,p{
     transition: all 0.3s ease 0s;
-    font-size: 20px;
+    font-size: 18px;
 }
-.nav-menu li a:hover{
-    color: red;
+.nav-menu li a:hover,p:hover{
+    color: black;
 }
 .nav-lists>*{
     display: inline-block;
 }
-.sign-up a{
-    font-size: 20px;
-    padding: 10px 7px;
-    background-color: blue;
-    border-radius: 4px;
-}
+
 .nav-links{
-    color: royalblue;
+    color: gray;
 } 
 .navbar__link--active{
-    color: red;
+    color: black;
 }
 @media screen and (max-width:960px) {
     .navbar{
@@ -121,13 +122,14 @@ li,a,button{
         align-items: center;
         width: 100%;
         position: absolute;
-        top: 110px;
+        top: 70px;
         left: -100%;
         opacity: 1;
         transition: all 0.5s ease;
     }
     .nav-lists.active{
-        background-color: blueviolet;
+        background-color: #fff;
+        text-align: center;
         left: 0;
         opacity: 1;
         transition: all 0.5s ease;

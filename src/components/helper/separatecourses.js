@@ -30,7 +30,7 @@ export const Rookiedata = [
 ]
 
 export const Advanceddata = [
-    {id: 1, Title: "Introduction to communication (7C", Description: "A method of teaching people to read by correlating sounds with symbols in an alphabetic writing system."  , Links: "/Courses/Phonix"},
+    {id: 1, Title: "Introduction to communication (7C)", Description: "A method of teaching people to read by correlating sounds with symbols in an alphabetic writing system."  , Links: "/Courses/Phonix"},
     {id: 2, Title: "Introductions and greetings", Description:  "Courses with no prerequisites,learning the basics of grammar,for defining self management or confidence building.",Links: "/Courses/Rookie"},
     {id: 3, Title: "Sentence construction", Description: "This course provides workplace success and business skills, Communication skills for real world etc.",Links: "/Courses/Advanced"},
     {id: 4, Title: "Verb forms and other grammatical structures", Description: "This course provides workplace success and business skills, Communication skills for real world etc.",Links: "/Courses/Advanced"},

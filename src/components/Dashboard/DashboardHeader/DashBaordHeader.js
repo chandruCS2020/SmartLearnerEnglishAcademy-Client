@@ -13,6 +13,10 @@
     import Paper from '@mui/material/Paper';
     import Link from '@mui/material/Link';
     import NotificationsIcon from '@mui/icons-material/Notifications';
+    import RegisterTable from '../DashboardComponents/RegisterTable';
+    import Countdetails from '../DashboardComponents/countDash';
+import FeedbackTable from '../DashboardComponents/feedbackTable';
+import ContactTable from '../DashboardComponents/contactTable';
 
     function Copyright(props) {
     return (
@@ -95,33 +99,73 @@
             <Toolbar />
             <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
                 <Grid container spacing={3}>
-                <Grid item xs={12} md={8} lg={9}>
+                <Grid item xs={12} md={5} lg={4}>
                     <Paper
                     sx={{
                         p: 2,
                         display: 'flex',
-                        flexDirection: 'column',
-                        height: 240,
+                        flexDirection: 'column'
                     }}
                     >
+                        <Typography 
+                        component="h1"  
+                        variant="h6" 
+                        sx={{mb:1.5}}>
+                            Stats
+                        </Typography>
+                        <Countdetails />
                     </Paper>
                 </Grid>
-                <Grid item xs={12} md={4} lg={3}>
+                <Grid item xs={12} md={7} lg={8}>
+                    
+                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                    <Typography 
+                    component="h1"  
+                    variant="h6" 
+                    sx={{mb:3}}>
+                        Register
+                    </Typography>
+                        <RegisterTable />
+                    </Paper>
+                </Grid>
+                <Grid item xs={12} md={12} lg={12}>
                     <Paper
                     sx={{
                         p: 2,
                         display: 'flex',
                         flexDirection: 'column',
-                        height: 240,
+                        height: 500,
                     }}
                     >
+                        <Typography 
+                        component="h1"  
+                        variant="h6" 
+                        sx={{mb:3}}>
+                            Feedback
+                        </Typography>
+                        <FeedbackTable />
+                    </Paper>
+                </Grid>
+                <Grid item xs={12} md={12} lg={12}>
+                    <Paper
+                    sx={{
+                        p: 2,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: 500,
+                    }}
+                    >
+                        <Typography 
+                        component="h1"  
+                        variant="h6" 
+                        sx={{mb:3}}>
+                            Contact
+                        </Typography>
+                        <ContactTable />
                     </Paper>
                 </Grid>
                 {/* Recent Orders */}
-                <Grid item xs={12}>
-                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                    </Paper>
-                </Grid>
+                
                 </Grid>
                 <Copyright sx={{ pt: 4 }} />
             </Container>

@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import Avatar from '@mui/material/Avatar';
+import React,{useState} from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -11,56 +9,25 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Alert } from '@mui/material';
 import Stack from '@mui/material/Stack';
-import logo from '../images/logo1.png';
-import { Redirect } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
-function Copyright(props) {
-return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-    {'Copyright © '}
-    <Link color="inherit" href="/" style={{textDecoration: 'none'}}>
-        SmartLearnEnglishAcademy
-    </Link>{' '}
-    {new Date().getFullYear()}
-    {'.'}
-    </Typography>
-);
-}
 
 const theme = createTheme();
 
-
-function SignUp() {
+export default function SignUp() {
+    const { register , reset , handleSubmit } = useForm();
     const [response, setresponse] = useState("");
     const [error, seterror] = useState(false)
     const [success, setsuccess] = useState(false)
-    
-const handleSubmit = (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    // eslint-disable-next-line no-console
-    const 
-    fName= data.get('firstName'),
-    lName=data.get('lastName'),
-    emails= data.get('email'),
-    passwords= data.get('password');
+const onSubmit = (data) => {
 
-    const data1 = {
-        firstName : fName,
-        lastName : lName,
-        email : emails,
-        password : passwords
-    };
-    fetch("http://localhost:3000/signup-email",{
+        fetch("http://localhost:3000/Contact",{
+        credentials: 'include', // It can be include, same-origin, omit
         method: 'POST', // or 'PUT'
-        headers: {
-            "Content-type": "application/json;charset=UTF-8",
-        },
-        body: JSON.stringify(data1),
-        credentials:"include"
+        headers: {"Content-type": "application/json;charset=UTF-8"},
+        body: JSON.stringify(data)
     })
     .then((data1)=>{
-        // console.log(data1);
         if(data1.status===400){
             seterror(true);
         }
@@ -69,17 +36,16 @@ const handleSubmit = (event) => {
         }
         return data1.text()
     })
-    
     .then((data)=>{
-        // response=data;
-        setresponse(data);
-    
+        setresponse(data)
+        reset();
     })
     .catch((err)=>{
-        console.log(err.message)
+        console.log(err);
     })
+    console.log(data);
 };
-    var errorDiv;
+var errorDiv;
     if(error){
         errorDiv= <Alert variant="outlined" className="Message" severity="error">
                     {response}
@@ -88,13 +54,10 @@ const handleSubmit = (event) => {
         errorDiv= <Alert variant="outlined" className="Message" severity="success">
         {response}
     </Alert>
-    return (<Redirect to = "/" />);
     }
 return (
-    <>
-    
     <ThemeProvider theme={theme}>
-    <Container component="main" maxWidth="xs">
+    <Container component="main" maxWidth="xs" sx={{paddingTop:9}}>
         <CssBaseline />
         <Box
         sx={{
@@ -104,15 +67,13 @@ return (
             alignItems: 'center',
         }}
         >
-        <Avatar sx={{ m: 1, width: 100 ,height: 100 }} src={logo} />
-        <Typography component="h1" variant="h5">
-            Sign up
+        <Typography component="h1" variant="h4">
+            Contact
         </Typography>
         <Stack sx={{ width: '100%',mt:3 }} spacing={2}>
             {errorDiv}
         </Stack>
-        
-        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
+        <Box component="form" noValidate onSubmit={handleSubmit(onSubmit)} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
                 <TextField
@@ -122,6 +83,7 @@ return (
                 fullWidth
                 id="firstName"
                 label="First Name"
+                {...register('name')}
                 autoFocus
                 />
             </Grid>
@@ -129,10 +91,12 @@ return (
                 <TextField
                 required
                 fullWidth
-                id="lastName"
-                label="Last Name"
-                name="lastName"
+                id="MobileNumber"
+                label="Mobile Number"
+                name="MobileNumber"
                 autoComplete="family-name"
+                {...register('mobile')}
+                type="number"
                 />
             </Grid>
             <Grid item xs={12}>
@@ -143,19 +107,33 @@ return (
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                {...register('email')}
                 />
             </Grid>
             <Grid item xs={12}>
                 <TextField
                 required
                 fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="new-password"
+                name="subject"
+                label="Subject"
+                id="Subject"
+                autoComplete="Subject"
+                {...register('subject')}
                 />
             </Grid>
+            <Grid item xs={12}>
+                <TextField
+                    required
+                    fullWidth
+                    id="contact-msg"
+                    label="Message"
+                    name="contact-msg"
+                    rows={7}
+                    variant="outlined"
+                    {...register('message')}
+                    multiline
+                />
+                </Grid>
             
             </Grid>
             
@@ -163,24 +141,13 @@ return (
             type="submit"
             fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+            sx={{ mt: 3, mb: 5 }}
             >
-            Sign Up
+            Contact
             </Button>
-            <Grid container justifyContent="flex-end">
-            <Grid item>
-                <Link href="/Signin" variant="body2">
-                Already have an account? Sign in
-                </Link>
-            </Grid>
-            </Grid>
         </Box>
         </Box>
-        <Copyright sx={{ mt: 5 ,mb: 5}} />
     </Container>
     </ThemeProvider>
-    </>
-)
+);
 }
-
-export default SignUp

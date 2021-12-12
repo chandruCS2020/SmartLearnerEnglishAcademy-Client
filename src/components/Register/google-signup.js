@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
@@ -11,21 +9,9 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Alert } from '@mui/material';
 import Stack from '@mui/material/Stack';
-import logo from '../images/logo1.png';
 import { Redirect } from 'react-router-dom';
 
-function Copyright(props) {
-return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-    {'Copyright © '}
-    <Link color="inherit" href="/" style={{textDecoration: 'none'}}>
-        SmartLearnEnglishAcademy
-    </Link>{' '}
-    {new Date().getFullYear()}
-    {'.'}
-    </Typography>
-);
-}
+
 
 const theme = createTheme();
 
@@ -41,17 +27,13 @@ const handleSubmit = (event) => {
     // eslint-disable-next-line no-console
     const 
     fName= data.get('firstName'),
-    lName=data.get('lastName'),
-    emails= data.get('email'),
-    passwords= data.get('password');
+    lName=data.get('lastName');
 
     const data1 = {
         firstName : fName,
-        lastName : lName,
-        email : emails,
-        password : passwords
+        lastName : lName
     };
-    fetch("http://localhost:3000/signup-email",{
+    fetch("http://localhost:3000/signup-oauth",{
         method: 'POST', // or 'PUT'
         headers: {
             "Content-type": "application/json;charset=UTF-8",
@@ -104,7 +86,6 @@ return (
             alignItems: 'center',
         }}
         >
-        <Avatar sx={{ m: 1, width: 100 ,height: 100 }} src={logo} />
         <Typography component="h1" variant="h5">
             Sign up
         </Typography>
@@ -135,28 +116,6 @@ return (
                 autoComplete="family-name"
                 />
             </Grid>
-            <Grid item xs={12}>
-                <TextField
-                required
-                fullWidth
-                id="email"
-                label="Email Address"
-                name="email"
-                autoComplete="email"
-                />
-            </Grid>
-            <Grid item xs={12}>
-                <TextField
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type="password"
-                id="password"
-                autoComplete="new-password"
-                />
-            </Grid>
-            
             </Grid>
             
             <Button
@@ -167,16 +126,9 @@ return (
             >
             Sign Up
             </Button>
-            <Grid container justifyContent="flex-end">
-            <Grid item>
-                <Link href="/Signin" variant="body2">
-                Already have an account? Sign in
-                </Link>
-            </Grid>
-            </Grid>
+            
         </Box>
         </Box>
-        <Copyright sx={{ mt: 5 ,mb: 5}} />
     </Container>
     </ThemeProvider>
     </>

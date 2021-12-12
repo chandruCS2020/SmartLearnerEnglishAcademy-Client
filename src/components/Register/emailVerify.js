@@ -10,7 +10,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import GoogleIcon from '@mui/icons-material/Google';
-import logo from '../images/logo1.png'
+import logo from '../images/logo1.png';
+import axios from 'axios';
 
 function Copyright(props) {
 return (
@@ -88,7 +89,12 @@ return (
             </Button>
             <Button type="button" onClick={(e) => {
                 e.preventDefault();
-                window.location.href='http://google.com';
+                axios
+                .get("http://localhost:3000/google-auth-signup")
+                .then(response =>{
+                    console.log(response.data)
+                    window.location.href=response.data;
+                })
                 }} 
                 fullWidth variant="outlined" sx={{mt: 1,mb:1}}>
                 <Avatar sx={{ m: 1, bgcolor: 'secondary.main' ,width: 30 ,height: 30 }}>

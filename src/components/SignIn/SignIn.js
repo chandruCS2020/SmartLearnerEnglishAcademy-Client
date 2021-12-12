@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React , { useContext, useState } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -11,6 +11,11 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import GoogleIcon from '@mui/icons-material/Google';
 import logo from '../images/logo1.png'
+import { useHistory } from 'react-router-dom';
+import { Alert } from '@mui/material';
+import Stack from '@mui/material/Stack';
+import { UserContext } from '../../App';
+import axios from'axios';
 
 function Copyright(props) {
 return (
@@ -28,38 +33,53 @@ return (
 const theme = createTheme();
 
 export default function SignUp() {
+    const { dispatch } = useContext(UserContext);
+    const [response, setresponse] = useState("");
+    const [error, seterror] = useState(false);
+    const history = useHistory();
 const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
     const 
-    fName= data.get('firstName'),
-    lName=data.get('lastName'),
     emails= data.get('email'),
     passwords= data.get('password');
 
     const data1 = {
-        firstName : fName,
-        lastName : lName,
         email : emails,
         password : passwords
     };
-    fetch("http://localhost:3000/signup",{
+    axios("http://localhost:3000/login-email",{
         method:"POST",
-        mode:"no-cors",
-        body:JSON.stringify(data1),
+        data:JSON.stringify(data1),
         headers: {
             'Content-Type': 'application/json',
-        },    'Accept':'*/*'
+        },
+        withCredentials:true,
     })
     .then((data1)=>{
-        console.log(data1)
+        if(data1.status === 400 ){
+            seterror(true);
+        }
+        else if(data1.status=== 200){
+            dispatch({type:"USER",payload:true})
+            history.push("/");
+        }
+        return data1.text();
+    })
+    .then((data)=>{
+        setresponse(data);
     })
     .catch((err)=>{
         console.log(err);
     })
 };
-
+var errorDiv;
+    if(error){
+        errorDiv= <Alert variant="outlined" className="Message" severity="error">
+                    {response}
+                </Alert>
+    }
 return (
     <ThemeProvider theme={theme}>
     <Container component="main" maxWidth="xs">
@@ -76,6 +96,9 @@ return (
         <Typography component="h1" variant="h5">
             Sign In
         </Typography>
+        <Stack sx={{ width: '100%',mt:3 }} spacing={2}>
+            {errorDiv}
+        </Stack>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
             <Grid item xs={12}>
@@ -112,7 +135,12 @@ return (
             </Button>
             <Button type="button" onClick={(e) => {
                 e.preventDefault();
-                window.location.href='http://google.com';
+                axios
+                .get("http://localhost:3000/google-auth-login")
+                .then(response =>{
+                    console.log(response.data)
+                    window.location.href=response.data;
+                })
                 }} 
                 fullWidth variant="outlined" sx={{mt: 1,mb:1}}>
                 <Avatar sx={{ m: 1, bgcolor: 'secondary.main' ,width: 30 ,height: 30 }}>

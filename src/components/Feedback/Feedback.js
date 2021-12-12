@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { TextareaAutosize } from '@mui/base';
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -10,54 +9,89 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
+import { Alert } from '@mui/material';
+import Stack from '@mui/material/Stack';
+
 
 
 const labels = {
-    0.5: 'Useless',
-    1: 'Useless+',
-    1.5: 'Poor',
-    2: 'Poor+',
-    2.5: 'Ok',
-    3: 'Ok+',
-    3.5: 'Good',
-    4: 'Good+',
-    4.5: 'Excellent',
-    5: 'Excellent+',
+    1: 'Very Poor',
+    2: 'Poor',
+    3: 'Average',
+    4: 'Good',
+    5: 'Excellent',
   };
 
 const theme = createTheme();
-
+function reset(){
+    const
+    firstName=document.getElementById("firstName").value="",
+    mobileNumbers=document.getElementById("mobileNumber").value="",
+    email=document.getElementById('email').value="",
+    feed=document.getElementById('feedback').value="",
+    hover=document.getElementById('hover-feed').value="";
+}
 export default function SignUp() {
+    
+const [response, setresponse] = useState("");
+const [error, seterror] = useState(false)
+const [success, setsuccess] = useState(false)
 const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
     const 
     fName= data.get('firstName'),
-    lName=data.get('lastName'),
+    mobileNumber=data.get('mobileNumber'),
     emails= data.get('email'),
-    passwords= data.get('password');
+    feedback= data.get('feedback'),
+    rating = data.get('hover-feedback');
+
+   
 
     const data1 = {
-        firstName : fName,
-        lastName : lName,
+        name : fName,
+        mobile : mobileNumber,
         email : emails,
-        password : passwords
+        feedback : feedback,
+        rating : rating
     };
-    fetch("http://localhost:3000/signup-email",{
+    fetch("http://localhost:3000/Feedback",{
         credentials: 'include', // It can be include, same-origin, omit
         method: 'POST', // or 'PUT'
         headers: {"Content-type": "application/json;charset=UTF-8"},
         body: JSON.stringify(data1)
     })
     .then((data1)=>{
-        console.log(data1)
+        if(data1.status===400){
+            seterror(true);
+        }
+        else{
+            setsuccess(true);
+        }
+        return data1.text()
+    })
+    .then((data)=>{
+        setresponse(data);
+        reset();    
     })
     .catch((err)=>{
         console.log(err);
+        reset();
     })
+    
 };
-const [value, setValue] = React.useState(2);
+var errorDiv;
+    if(error){
+        errorDiv= <Alert variant="outlined" className="Message" severity="error">
+                    {response}
+                </Alert>
+    }else if(success){
+        errorDiv= <Alert variant="outlined" className="Message" severity="success">
+        {response}
+    </Alert>
+    }
+const [value, setValue] = React.useState(1);
 const [hover, setHover] = React.useState(-1);
 return (
     <ThemeProvider theme={theme}>
@@ -71,9 +105,12 @@ return (
             alignItems: 'center',
         }}
         >
-        <Typography component="h1" variant="h2">
+        <Typography component="h1" variant="h4">
             Feedback
         </Typography>
+        <Stack sx={{ width: '100%',mt:3 }} spacing={2}>
+            {errorDiv}
+        </Stack>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
@@ -108,24 +145,24 @@ return (
                     />
                 </Grid>
                 <Grid item xs={12}>
-                    <TextareaAutosize
-                    required
-                    fullWidth
-                    maxRows={10}
-                    aria-label="maximum height"
-                    placeholder="Enter Feedback"
-                    name="feedback"
-                    style={{ width:410,resize:'vertical',padding:'10px' }}
-                    className="text-area-resize"
-                    />
+                <TextField
+                required
+                fullWidth
+                id="feedback"
+                label="Feedback"
+                name="feedback"
+                rows={7}
+                variant="outlined"
+                multiline
+                />
                 </Grid>
                 <Grid item xs={12}>
                     <Rating
                     name="hover-feedback"
+                    id='hover-feed'
                     defaultValue={0} 
                     size="large"
                     value={value}
-                    precision={0.5}
                     onChange={(event, newValue) => {
                     setValue(newValue);
                     }}

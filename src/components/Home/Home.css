@@ -5,12 +5,11 @@
     justify-content: space-evenly;
 }
 .section-1{
-    height: calc(100vh - 118px);
+    height: 100vh;
     background-image: url(../images/english.jpeg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     display: flex;
     justify-content: center;
     align-items: center;

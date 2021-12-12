@@ -7,7 +7,7 @@ function RegisterNav() {
         <>
             <div  className="Register-nav">
                 <Link to='/Contact' className="Contact-navlink">Contact Us</Link>
-                <Link to='/Register' className="Register-navlink">Register</Link>
+                <Link to='/Signup-email' className="Register-navlink">Register</Link>
             </div>
         </>
     )

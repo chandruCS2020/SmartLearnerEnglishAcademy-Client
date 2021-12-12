@@ -10,7 +10,7 @@ function Courses() {
             </div>
             <div className="Courses-list">
             {data.map(elem => (
-                    <div className="courses-card">
+                    <div className="courses-card" key={elem.id}>
                         <h1 className="course-title">{elem.Title}</h1>
                         <p className="course-description">{elem.Description}</p>
                         <Link to={elem.Links} className='course-link'>Learn More</Link>
