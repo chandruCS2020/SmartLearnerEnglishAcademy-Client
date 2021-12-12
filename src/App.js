@@ -40,7 +40,7 @@ function App() {
           <Route path='/Register' exact component={Register} />
           <Route path='/Feedback' exact component={Feedback} />
           <Route path='/Google-oauth-signup' exact component={googleSignup} />
-          <Route path='/Testimonial' exact component={testimonial} />
+          <Route path='/testimonial' exact component={testimonial} />
           
           
           <div>

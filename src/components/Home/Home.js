@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Home.css';
 import Feedback from '../Feedback/Feedback'
 import Courses from '../Courses/Course/Courses';
+import Testimonials from '../Feedback/Testimonials';
 
 function Home() {
     return (
@@ -23,11 +24,15 @@ function Home() {
                 </div>
             </div>
         </section>
-        <section className="Section section-2">
+        <section className="Section section-2" id='learnMore'>
             <Courses />
         </section>
         <section className="Section section-3">
-            <Feedback />
+            <Testimonials />
+            
+        </section>
+        <section className="Section section-4">
+        <Feedback />
         </section>
             
         </>

@@ -135,7 +135,7 @@ function Navbar() {
                             console.log("check login error",error);
                             });
                             
-                        }} activeClassName="navbar__link--active logout" className="nav-links logout">
+                        }}  className="nav-links logout">
                             Logout
                         </p>
                     </li>

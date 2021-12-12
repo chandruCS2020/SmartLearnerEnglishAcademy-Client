@@ -105,12 +105,22 @@
 .courses-i{
     padding:40px 36px ;
     background-color: #f9f9ff;
-    background-image: url('../../images/bg.jpeg');
     background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     justify-content: space-between;
     border: 5px solid #002347;
 
+}
+.courses-1{
+    background-image: url('../../images/course-1.jpg');
+}
+.courses-2{
+    background-image: url('../../images/course-2.jpg');
+}
+.courses-3{
+    background-image: url('../../images/course-3.jpg');
 }
 .courses-i:hover{
     box-shadow: -1px 9px 32px -7px rgba(0,0,0,0.7);
@@ -123,6 +133,9 @@
 }
 .courses-i-ls-title{
     color: #002347;
+}
+.course-i-ls-description:hover{
+    color: indigo;
 }
 .courses-i-buttons{
     display: flex;
@@ -146,7 +159,7 @@
     
 }
 .Duration-month{
-    color: #002347;
+    color: #fff;
     font-size: 15px;
 }
 .duration-days {

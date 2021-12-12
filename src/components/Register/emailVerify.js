@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React , { useState }from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -12,6 +12,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import GoogleIcon from '@mui/icons-material/Google';
 import logo from '../images/logo1.png';
 import axios from 'axios';
+import { Alert } from '@mui/material';
+import Stack from '@mui/material/Stack';
 
 function Copyright(props) {
 return (
@@ -29,6 +31,8 @@ return (
 const theme = createTheme();
 
 export default function SignUp() {
+    
+    const [success, setsuccess] = useState(false);
 const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -40,13 +44,18 @@ const handleSubmit = (event) => {
         mode:"no-cors"
     })
     .then((data1)=>{
-        console.log(data1)
+        setsuccess(true);
     })
     .catch((err)=>{
-        console.log(err);
+        setsuccess(false);
     })
 };
-
+var errorDiv;
+    if(success){
+        errorDiv= <Alert variant="outlined" className="Message" severity="success">
+                    Verification Link has sent to Mail
+                </Alert>
+    }
 return (
     <ThemeProvider theme={theme}>
     <Container component="main" maxWidth="xs">
@@ -63,8 +72,14 @@ return (
         <Typography component="h1" variant="h5">
             Sign up
         </Typography>
+        
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
+                <Grid item xs={12}>
+                <Stack sx={{ mt:0 ,mb:2}} spacing={2}>
+            {errorDiv}
+        </Stack>
+                </Grid>
             <Grid item xs={12}>
                 <TextField
                 required
