@@ -1,5 +1,5 @@
 import './App.css';
-import React,{ createContext , useReducer } from 'react';
+import React,{ createContext , Fragment, useReducer } from 'react';
 import Register from './components/Register/Register';
 import SignIn from './components/SignIn/SignIn';
 import Navbar from './components/Navbar/Navbar';
@@ -35,14 +35,15 @@ function App() {
       <IsloggedIn />
         <ScrollToTop>
         <Switch>
-          <Route path='/Dashboard' exact component={Dashboard} />
+
+          <Route path='/Dashboard/Admin' exact component={Dashboard} />
           <Route path='/signup-email' exact component={emailVerify} />
           <Route path='/Signin' exact component={SignIn} />
           <Route path='/Register' exact component={Register} />
           <Route path='/Feedback' exact component={Feedback} />
           <Route path='/Google-oauth-signup' exact component={googleSignup} />
           
-          
+          <React.Fragment>
           <div>
             <Navbar />
             <Route path='/' exact component={Home} />
@@ -55,6 +56,7 @@ function App() {
             <Whatsapp />
             <Footer />
           </div>
+          </React.Fragment>
         </Switch>
         
         <ScrollToTops smooth style={{backgroundColor:'#002347',padding:'3px'}} component={<MySVG />} />

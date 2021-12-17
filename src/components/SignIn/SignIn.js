@@ -58,20 +58,18 @@ const handleSubmit = (event) => {
         withCredentials:true,
     })
     .then((data1)=>{
-        if(data1.status === 400 ){
-            seterror(true);
-        }
-        else if(data1.status=== 200){
+        if(data1.status=== 200){
             dispatch({type:"USER",payload:true})
             history.push("/");
+            if(data1.data==='admin'){
+                history.push("/Dashboard/Admin")
+            }
+            setresponse(data);
         }
-        return data1.text();
-    })
-    .then((data)=>{
-        setresponse(data);
     })
     .catch((err)=>{
-        console.log(err);
+        seterror(true);
+        setresponse("Invalid Credentials");
     })
 };
 var errorDiv;
@@ -150,7 +148,7 @@ return (
             </Button>
             <Grid container justifyContent="flex-end">
             <Grid item>
-                <Link href="/Register" variant="body2">
+                <Link href="/signup-email" variant="body2">
                     Create New Account
                 </Link>
             </Grid>

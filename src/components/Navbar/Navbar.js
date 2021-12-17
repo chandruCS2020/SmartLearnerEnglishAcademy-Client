@@ -9,7 +9,7 @@ import axios from 'axios';
 function Navbar() {
     const [visible, setVisible] = useState(false)
 
-    const toggleVisible = () => {
+    async function toggleVisible(){
         const scrolled = document.documentElement.scrollTop;
         if (scrolled > 50){
         setVisible(true)

@@ -27,8 +27,8 @@ function reset(){
     firstName=document.getElementById("firstName").value="",
     mobileNumbers=document.getElementById("mobileNumber").value="",
     email=document.getElementById('email').value="",
-    feed=document.getElementById('feedback').value="",
-    hover=document.getElementById('hover-feed').value="";
+    feed=document.getElementById('feedback').value=""
+    console.log(firstName,mobileNumbers,email,feed)
 }
 export default function SignUp() {
     

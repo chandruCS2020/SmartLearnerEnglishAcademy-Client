@@ -73,7 +73,7 @@
     row-gap: 25px;
 }
 .feedback-box{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     padding: 10px;
 }
 .feedback-box h1{
@@ -88,6 +88,11 @@
     margin-top: 20px;
     text-align: center;
     color: #FFF;
+    font-size: 1.5rem;
+}
+.feedback-btn:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
 }
 @media screen and (max-width:960px) {
     .section-1{

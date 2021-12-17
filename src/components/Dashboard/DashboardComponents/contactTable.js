@@ -42,7 +42,6 @@ export default class ContactTable extends Component {
   render(){
       
     const { contact } = this.state;
-    console.log(contact)
     return (
         <TableContainer component={Paper}>
             <Table  aria-label="simple table">

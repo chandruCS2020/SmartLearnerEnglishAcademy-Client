@@ -57,7 +57,7 @@ import axios from 'axios';
 
     function DashboardContent() {
         const history = useHistory();
-     const { state, dispatch} = useContext(UserContext);
+        const { dispatch} = useContext(UserContext);
 
     return (
         <ThemeProvider theme={mdTheme}>

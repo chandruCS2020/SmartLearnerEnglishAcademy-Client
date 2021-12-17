@@ -50,7 +50,7 @@ function Test() {
             }
         ]
     };
-    useEffect(()=>{
+    async function getData(){
         axios
         .get("http://localhost:3000/testimonials",{withCredentials:true})
         .then(response => {
@@ -64,6 +64,9 @@ function Test() {
         .catch(error => {
             console.log("Register details");
         });
+    }
+    useEffect(()=>{
+        getData();
     },[]);
     return (
         <>
