@@ -1,0 +1,114 @@
+.about{
+    padding: 10%;
+}
+.About_img{
+    background-image: url('../images/about.jpg');
+}
+.company-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.comapany__details__img,.company_details_i{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+    color: #006FBF;
+}
+.comapany__details__img img{
+    width:100%;
+    height: 370px;
+}
+.company__details__description{
+    text-align: justify;
+    padding: 20px 36px;
+    line-height: 30px;
+}
+
+.company-goal{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 10% 0;
+    row-gap: 100px;
+}
+.company__goal__main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-basis: 35%;
+    padding: 40px 36px;
+    position: relative;
+    clip-path: polygon(0% -50%, 100% 0%, 100% 90%, 50% 100%, 0 90%);
+}
+.company__goal_main_vision{
+    background-color: #FFC000;
+}
+.company__goal_main_mission{
+    background-color: #006FBF;
+}
+.company__logo{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: -75px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    border: 10px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.company__inner__logo{
+    border: 20px solid ;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.company__logo #VISION{
+    border-color: #FFC000;
+}
+.company__logo #MISSION{
+    border-color: #006FBF;
+}
+.company__decription__goal{
+    margin: 50px 0;
+    text-align: justify;
+    line-height: 30px;
+    color: #fff;
+}
+@media screen and (max-width:1200px) {
+    .about{
+        padding: 40% 7%;
+    }
+    .company-details{
+    flex-direction: column;
+    }
+    .comapany__details__img img{
+        height: 450px;
+    }
+    .comapany__details__img,.company_details_i{
+        width: 100%!important;
+    }
+    .company__details__description{
+        padding: 40px 10px;
+    }
+    .company__goal__main{
+        flex-basis: 100%;
+        padding: 40px 25px;
+    }
+    .company-goal{
+        padding: 20% 0%;
+    }
+    .company__details__description .Link{
+        font-size: 17px!important;
+    }
+}

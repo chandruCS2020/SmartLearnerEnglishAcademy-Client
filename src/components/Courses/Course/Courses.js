@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 function Courses() {
     return (
         <>
-            <div className="Courses">
-                <h1 className="Courses-head">Awesome Courses</h1>
-                <p className="Courses-info">Life should serve up its feast of experience in a series of courses</p>
+            <div className="Section_title">
+                <h1 className="Section_head">Awesome <span className="secondary-name">Courses</span></h1>
+                <p className="Section_info">Life should serve up its feast of experience in a series of courses</p>
             </div>
             <div className="Courses-list">
             {data.map(elem => (

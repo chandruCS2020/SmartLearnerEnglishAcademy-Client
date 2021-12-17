@@ -26,16 +26,16 @@ function Footer() {
                 <div className="footer-card card1">
                     <h4 className="head-name">COURSES</h4>
                     <div className="card-body">
-                        <p><Link to='/Phonix' className="phonix">Phonix</Link></p>
-                        <p><Link to='/Begginer' className="beginner">Beginner</Link></p>
+                        <p><Link to='/Phonix' className="phonix">Phonics</Link></p>
+                        <p><Link to='/Begginer' className="beginner">Rookie</Link></p>
                         <p><Link to='/Advanced' className="advanced">Advanced</Link></p>
                     </div>
                 </div>
                 <div className="footer-card card2">
                     <h4 className="head-name">CONTACT</h4>
                     <div className="card-body">
-                        <p><a href="mailto:chandru6501@gmail.com" className="email">chandru6501@gmail.com</a></p>
-                        <p><a href="tel:+916374520688" className="mobile">6374520688</a></p>
+                        <p><a href="mailto:sea2020.english@gmail.com" className="email">sea2020.english@gmail.com</a></p>
+                        <p><a href="tel:+916385453101" className="mobile">6385453101</a></p>
                     </div>
                 </div>
                 <div className="footer-card card3">

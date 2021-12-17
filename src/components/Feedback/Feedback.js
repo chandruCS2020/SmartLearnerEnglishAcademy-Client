@@ -4,7 +4,6 @@ import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
@@ -105,9 +104,10 @@ return (
             alignItems: 'center',
         }}
         >
-        <Typography component="h1" variant="h4">
-            Feedback
-        </Typography>
+        <div className="Section_title">
+                <h1 className="Section_head">Feedback <span className="secondary-name">Form</span></h1>
+                {/* <p className="Section_info">Life should serve up its feast of experience in a series of courses</p> */}
+        </div>
         <Stack sx={{ width: '100%',mt:3 }} spacing={2}>
             {errorDiv}
         </Stack>

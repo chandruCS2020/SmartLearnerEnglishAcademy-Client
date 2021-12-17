@@ -1,3 +1,6 @@
+.courses_img{
+    background-image: url('../../images/courses.jpg');
+}
 .Courses-head-card{
     padding: 10%;
 }
@@ -13,13 +16,23 @@
 
 
 
-.Courses{
+.Section_title{
     line-height: 40px;
     text-align: center;
 }
-.Courses-head{
+.Section_head{
     font-size: 3rem;
     color: #002347;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.courses__name{
+    margin-bottom: 10px;
+}
+.Section_info{
+    margin-bottom: 15px;
+    line-height:30px;
 }
 .Courses-list{
     display: flex;
@@ -66,7 +79,15 @@
 .course-description{
     line-height: 25px;
 }
-@media screen and (max-width:960px) {
+.courses-title__i{
+    color: #002347;
+    font-size: 15px;
+}
+#Phonics{
+    flex-basis: 30%!important;
+    padding: 20px 15px;
+}
+@media screen and (max-width:1200px) {
     .Courses-list{
         flex-direction: column;
     }

@@ -1,3 +1,46 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+.slick-slider{
+    width: 100%!important;
+}
+  .slick-slider.slick-initialized {
+      width: 100%;
+  }
+  .slide{
+      transform: scale(0.8);
+      opacity: 0.8;
+  }
+  .slide.activeSlide{
+      transform: scale(1);
+      opacity: 1;
+  }
+  .arrow {
+    background-color: #fff;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+  }
+  .arrow.next:hover,.arrow.prev:hover{
+      background-color: #68edff;
+  }
+  .arrow svg {
+    transition: color 300ms;
+  }
+  
+  .arrow svg:hover {
+    color: #68edff;
+  }
+  
+  .next {
+    right: 0%;
+    top: 50%;
+  }
+  
+  .prev {
+    left: 0%;
+    top: 50%;
+  }
 .Testimonials{
     padding: 0 10%;
 }
@@ -33,6 +76,21 @@
 .Testimonial-description{
     line-height: 25px;
 }
+.testmonials-content::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  @media screen and (max-width:400) {
+    .slide{
+        transform: scale(0.8);
+        opacity: 0.8;
+    }
+    .slide.activeSlide{
+        transform: scale(0.8);
+        opacity: 1;
+    }
+      
+  }
 @media screen and (max-width:1225px) {
     .Testimonials{
         padding: 5%;

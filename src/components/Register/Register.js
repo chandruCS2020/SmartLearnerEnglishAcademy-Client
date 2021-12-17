@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useContext } from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -13,6 +13,7 @@ import { Alert } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import logo from '../images/logo1.png';
 import { Redirect } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 function Copyright(props) {
 return (
@@ -34,6 +35,8 @@ function SignUp() {
     const [response, setresponse] = useState("");
     const [error, seterror] = useState(false)
     const [success, setsuccess] = useState(false)
+    const { dispatch } = useContext(UserContext);
+    // const history = useHistory();
     
 const handleSubmit = (event) => {
     event.preventDefault();
@@ -63,8 +66,8 @@ const handleSubmit = (event) => {
         // console.log(data1);
         if(data1.status===400){
             seterror(true);
-        }
-        else{
+        }else if(data1.status===200){
+            dispatch({type:"USER",payload:true})
             setsuccess(true);
         }
         return data1.text()

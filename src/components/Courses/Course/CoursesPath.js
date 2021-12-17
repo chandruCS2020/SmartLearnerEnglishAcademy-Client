@@ -10,10 +10,12 @@ import Icon from "@material-ui/core/Icon";
 function CoursesPath() {
     return (
         <>
-            <div className="courses-i-main">
-                <div className="cousres-i-title">
-                    <h1>Courses</h1>
+            <section className='section_img courses_img'>
+                <div className="header_i">
+                    <h1 className="name_i">Courses</h1>
                 </div>
+            </section>
+            <div className="courses-i-main">
                 <div className="courses-objective">
                     <h3 className="courses-objective-head">
                         Courses Objective

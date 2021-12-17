@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import Rating from '@mui/material/Rating';
 import axios from 'axios';
 import './testimonial.css';
-
-import { Avatar, Card, Grid } from '@mui/material';
+import { Avatar, Card,  Grid } from '@mui/material';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-
 export default class Testimonials extends Component {
     constructor(props){
         super(props)
         this.state = {
             testimonials:[],
+            
         }
     }
     async componentDidMount(){
@@ -30,18 +29,19 @@ export default class Testimonials extends Component {
             }
         })
         .catch(error => {
-          console.log("Register details");
+            console.log("Register details");
         });
     }
+    
 
     render() {
-        const { testimonials } =this.state;
+        const { expanded,testimonials } =this.state;
         return (
             <>
                 <div className="Testimonials">
                 <div className="Testimonial-heads">
                     <h1 className="Testimonial-title">
-                        Testimonials
+                        Our <span className="secondary-name">Testimonials</span>
                     </h1>
                 </div>
                 <Grid  spacing={2} 
@@ -49,8 +49,10 @@ export default class Testimonials extends Component {
                 direction="row"
                 justifyContent="space-evenly">
                 {testimonials.map(elem => (
-                    <Grid item xs={12} sm={3} key={elem._id} >
-                    <Card sx={{height:'100%'}}>
+                    <Grid item xs={12} xl={4} md={5} sm={6} key={elem._id} >
+                    <Card sx={{height:'100%' ,transition:'all 0.5s ease',margin:'0 10px',
+                                '&:hover': {boxShadow:' -1px 9px 32px -7px rgba(0,0,0,0.7)'
+                                            ,transform:'scale(1.03)'}}}>
                     <Grid 
                     sx={{
                         height: 150,
@@ -74,9 +76,9 @@ export default class Testimonials extends Component {
                             {elem.name}
                             </Typography>
                             <Rating className="Testimonial-rating" name="read-only" value={elem.rating} readOnly />
-                            <Typography variant="body2" color="text.secondary">
+                            <p variant="body2" color="text.secondary"  className='testmonials-content' style={{height: expanded ? 'auto' : 150, overflowY: "auto" ,overflowX:'hidden',opacity:0.8,fontWeight:300}}>
                             {elem.feedback}
-                            </Typography>
+                            </p>
                         </CardContent>
                     </Card>
                 </Grid>

@@ -1,22 +1,23 @@
 
-    import * as React from 'react';
+    import React,{ useContext } from 'react';
     import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
     import CssBaseline from '@mui/material/CssBaseline';
     import Box from '@mui/material/Box';
     import MuiAppBar from '@mui/material/AppBar';
     import Toolbar from '@mui/material/Toolbar';
     import Typography from '@mui/material/Typography';
-    import IconButton from '@mui/material/IconButton';
-    import Badge from '@mui/material/Badge';
     import Container from '@mui/material/Container';
     import Grid from '@mui/material/Grid';
     import Paper from '@mui/material/Paper';
     import Link from '@mui/material/Link';
-    import NotificationsIcon from '@mui/icons-material/Notifications';
     import RegisterTable from '../DashboardComponents/RegisterTable';
     import Countdetails from '../DashboardComponents/countDash';
-import FeedbackTable from '../DashboardComponents/feedbackTable';
-import ContactTable from '../DashboardComponents/contactTable';
+    import FeedbackTable from '../DashboardComponents/feedbackTable';
+    import ContactTable from '../DashboardComponents/contactTable';
+    import { useHistory } from 'react-router-dom';
+
+import { UserContext } from '../../../App'
+import axios from 'axios';
 
     function Copyright(props) {
     return (
@@ -55,7 +56,8 @@ import ContactTable from '../DashboardComponents/contactTable';
     const mdTheme = createTheme();
 
     function DashboardContent() {
-    
+        const history = useHistory();
+     const { state, dispatch} = useContext(UserContext);
 
     return (
         <ThemeProvider theme={mdTheme}>
@@ -76,11 +78,32 @@ import ContactTable from '../DashboardComponents/contactTable';
                 >
                     Dashboard
                 </Typography>
-                <IconButton color="inherit">
-                <Badge badgeContent={4} color="secondary">
-                    <NotificationsIcon />
-                </Badge>
-                </IconButton>
+                <Typography
+                    component="h1"
+                    variant="h6"
+                    color="inherit"
+                    noWrap
+                    sx={{cursor:'pointer'}}
+                    onClick={(e)=>{
+                        e.preventDefault();
+                        axios
+                        .get("http://localhost:3000/logout",{ withCredentials: true })
+                        .then(response => {
+                            if(response.status===200){
+                                dispatch({type:"USER",payload:false});
+                                history.push("/");
+                            }else{
+                                dispatch({type:"USER",payload:true});
+                            }
+                        })
+                        .catch(error => {
+                        console.log("check login error",error);
+                        });
+                        
+                    }}
+                >
+                    Logout
+                </Typography>
             </Toolbar>
             </AppBar>
 
@@ -118,7 +141,7 @@ import ContactTable from '../DashboardComponents/contactTable';
                 </Grid>
                 <Grid item xs={12} md={7} lg={8}>
                     
-                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' ,height: 307}}>
                     <Typography 
                     component="h1"  
                     variant="h6" 

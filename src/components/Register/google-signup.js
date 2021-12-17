@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext , useHistory } from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -10,6 +10,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Alert } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import { Redirect } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 
 
@@ -20,6 +21,8 @@ function SignUp() {
     const [response, setresponse] = useState("");
     const [error, seterror] = useState(false)
     const [success, setsuccess] = useState(false)
+    const { dispatch } = useContext(UserContext);
+    const history = useHistory();
     
 const handleSubmit = (event) => {
     event.preventDefault();
@@ -45,8 +48,9 @@ const handleSubmit = (event) => {
         // console.log(data1);
         if(data1.status===400){
             seterror(true);
-        }
-        else{
+        }else if(data1.status===200){
+            dispatch({type:"USER",payload:true})
+            history.push("/");
             setsuccess(true);
         }
         return data1.text()

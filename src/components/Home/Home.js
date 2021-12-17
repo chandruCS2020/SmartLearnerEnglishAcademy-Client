@@ -1,9 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { Link } from 'react-scroll';
 import './Home.css';
 import Feedback from '../Feedback/Feedback'
 import Courses from '../Courses/Course/Courses';
-import Testimonials from '../Feedback/Testimonials';
+import WhyDifferent from '../About/WhyDifferent'
+import Test from '../Feedback/Test';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 function Home() {
     return (
@@ -19,20 +22,38 @@ function Home() {
                     IMMERSE IN OUR SEA AND COME OUT AS A PRO
                 </h1>
                 <div className="home-buttons">
-                    <Link to="/"  className="Learn-more">Learn More</Link>
-                    <Link to="/Courses" className="See-Cources">See Courses</Link>
+                    <Link to="LearnMore"  spy={true} smooth={true} className="Learn-more">Learn More</Link>
+                    <NavLink to="/Courses" className="See-Cources">See Courses</NavLink>
                 </div>
             </div>
         </section>
-        <section className="Section section-2" id='learnMore'>
+        <section className="Section section-2" id='LearnMore'>
             <Courses />
         </section>
-        <section className="Section section-3">
-            <Testimonials />
-            
+        <section className="Section section-3" >
+            <WhyDifferent />
         </section>
         <section className="Section section-4">
-        <Feedback />
+            <Test />
+            
+        </section>
+        <section className="Section section-5">
+            <div className="feedback">
+            <div className="feedback-left">
+                <div className="feedback-box">
+                    <h1 className='feedback-h1'>Need Help ?</h1>
+                    <h3 className='feedback-contact'>Contact us</h3>
+                    <div className="feedback-btn">
+                    <NavLink to='/Contact'>
+                        <ArrowForwardIcon  />
+                    </NavLink>
+                    </div>
+                </div>
+            </div>
+            <div className="feedback-right">
+                <Feedback />
+            </div>
+            </div>
         </section>
             
         </>

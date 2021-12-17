@@ -94,23 +94,6 @@ function Navbar() {
                         <NavLink to='/Courses' activeClassName="navbar__link--active" className="nav-links">
                             Courses
                         </NavLink>
-                        <ul className="dropdown">
-                            <li>
-                            <NavLink to='/Courses/Phonix' activeClassName="navbar__link--active" className="nav-links">
-                                Phonics
-                            </NavLink>
-                            </li>
-                            <li>
-                            <NavLink to='/Courses/Rookie'  activeClassName="navbar__link--active" className="nav-links">
-                                Rookie
-                            </NavLink>
-                            </li>
-                            <li>
-                            <NavLink to='/Courses/Advanced' activeClassName="navbar__link--active" className="nav-links">
-                                Advanced
-                            </NavLink>
-                            </li>
-                        </ul>
                     </li>
                     <li className="nav-items">  
                         <NavLink to='/Contact' activeClassName="navbar__link--active" className="nav-links">
@@ -121,7 +104,6 @@ function Navbar() {
                     <li className="nav-items">  
                         <p onClick={(e)=>{
                             e.preventDefault();
-                           
                             axios
                             .get("http://localhost:3000/logout",{ withCredentials: true })
                             .then(response => {
@@ -143,10 +125,11 @@ function Navbar() {
             )
         }
     }
+    
     return (
         <>
-            <div className={click ? 'navbar active' : 'navbar' } style={{backgroundColor: visible ? 'White' : 'inherit',boxShadow : visible ? '-1px 9px 32px -7px rgba(0,0,0,0.7)':'none'}} >
-                <div className={click ? ' navbar-container container active' : 'navbar-container container'}>
+            <div className={click ? 'navbar active' : 'navbar' } style={{backgroundColor:'#006FBF',}} >
+                <div className={visible || click ? ' navbar-container container active' : 'navbar-container container'} style={{}}>
                     <div className="logo">
                         <NavLink to='/' className="navbar-logo">
                         <img src={logo} alt="logo" width="89"/>
