@@ -21,7 +21,7 @@ export default function Contact() {
     const [success, setsuccess] = useState(false)
 const onSubmit = (data) => {
 
-        fetch("http://localhost:3000/Contact",{
+        fetch("https://temptemp132323232.herokuapp.com/Contact",{
         credentials: 'include', // It can be include, same-origin, omit
         method: 'POST', // or 'PUT'
         headers: {"Content-type": "application/json;charset=UTF-8"},

@@ -54,7 +54,7 @@ const handleSubmit = (event) => {
         email : emails,
         password : passwords
     };
-    fetch("http://localhost:3000/signup-email",{
+    fetch("https://temptemp132323232.herokuapp.com/signup-email",{
         method: 'POST', // or 'PUT'
         headers: {
             "Content-type": "application/json;charset=UTF-8",

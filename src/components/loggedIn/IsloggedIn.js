@@ -5,7 +5,7 @@ import { UserContext } from '../../App';
 const IsloggedIn = () => {
     const { dispatch } = useContext(UserContext);
     axios
-    .get("http://localhost:3000/isLoggedIn",{ withCredentials: true })
+    .get("https://temptemp132323232.herokuapp.com/isLoggedIn",{ withCredentials: true })
     .then(response => {
         if(response.status===200){
             dispatch({type:"USER",payload:true});

@@ -1,4 +1,4 @@
-import React, { useState, useContext , useHistory } from 'react';
+import React, { useState, useContext } from 'react';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -22,7 +22,6 @@ function SignUp() {
     const [error, seterror] = useState(false)
     const [success, setsuccess] = useState(false)
     const { dispatch } = useContext(UserContext);
-    const history = useHistory();
     
 const handleSubmit = (event) => {
     event.preventDefault();
@@ -36,7 +35,7 @@ const handleSubmit = (event) => {
         firstName : fName,
         lastName : lName
     };
-    fetch("http://localhost:3000/signup-oauth",{
+    fetch("https://temptemp132323232.herokuapp.com/signup-oauth",{
         method: 'POST', // or 'PUT'
         headers: {
             "Content-type": "application/json;charset=UTF-8",
@@ -50,7 +49,6 @@ const handleSubmit = (event) => {
             seterror(true);
         }else if(data1.status===200){
             dispatch({type:"USER",payload:true})
-            history.push("/");
             setsuccess(true);
         }
         return data1.text()

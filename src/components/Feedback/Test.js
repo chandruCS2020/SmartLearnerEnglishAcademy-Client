@@ -52,7 +52,7 @@ function Test() {
     };
     async function getData(){
         axios
-        .get("http://localhost:3000/testimonials",{withCredentials:true})
+        .get("https://temptemp132323232.herokuapp.com//testimonials",{withCredentials:true})
         .then(response => {
             if(response.status===200){
                 settestimonials(response.data)

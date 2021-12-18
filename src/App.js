@@ -35,7 +35,6 @@ function App() {
       <IsloggedIn />
         <ScrollToTop>
         <Switch>
-
           <Route path='/Dashboard/Admin' exact component={Dashboard} />
           <Route path='/signup-email' exact component={emailVerify} />
           <Route path='/Signin' exact component={SignIn} />

@@ -22,7 +22,7 @@ export default class FeedbackTable extends Component {
     }
     async componentDidMount(){
         axios
-        .get("http://localhost:3000/get-feedback",{withCredentials:true})
+        .get("https://temptemp132323232.herokuapp.com/get-feedback",{withCredentials:true})
         .then(response => {
             if(response.status===200){
                 this.setState({

@@ -49,7 +49,7 @@ const handleSubmit = (event) => {
         email : emails,
         password : passwords
     };
-    axios("http://localhost:3000/login-email",{
+    axios("https://temptemp132323232.herokuapp.com/login-email",{
         method:"POST",
         data:JSON.stringify(data1),
         headers: {
@@ -134,7 +134,7 @@ return (
             <Button type="button" onClick={(e) => {
                 e.preventDefault();
                 axios
-                .get("http://localhost:3000/google-auth-login")
+                .get("https://temptemp132323232.herokuapp.com/google-auth-login")
                 .then(response =>{
                     console.log(response.data)
                     window.location.href=response.data;

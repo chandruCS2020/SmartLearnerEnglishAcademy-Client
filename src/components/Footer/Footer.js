@@ -8,7 +8,7 @@ function Footer() {
         <>
         <div className="footer">
             <div className="footer-company">
-                <h1 className="company-name">Smart Learn English Academy</h1>
+                <h1 className="company-name">Smartlearn English Academy</h1>
                 <p className="company-slogan">
                     <span className="f-letter">S</span>PEAK |  
                     <span className="f-letter"> E</span>XCEL |  

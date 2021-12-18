@@ -39,7 +39,7 @@ const handleSubmit = (event) => {
     // eslint-disable-next-line no-console
     const 
     emails= data.get('email');
-    fetch("http://localhost:3000/signup-email?email="+emails,{
+    fetch("https://temptemp132323232.herokuapp.com/signup-email?email="+emails,{
         method:"GET",
         mode:"no-cors"
     })
@@ -105,7 +105,7 @@ return (
             <Button type="button" onClick={(e) => {
                 e.preventDefault();
                 axios
-                .get("http://localhost:3000/google-auth-signup")
+                .get("https://temptemp132323232.herokuapp.com/google-auth-signup")
                 .then(response =>{
                     console.log(response.data)
                     window.location.href=response.data;

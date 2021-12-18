@@ -28,7 +28,7 @@ function Phonix() {
                                 </AccordionSummary>
                                 <AccordionDetails>
                                     <div className="courses_level">
-                                        <div className="courses__info">{item.description}</div>
+                                        <div className="courses__info" style={{marginBottom:'20px'}}>{item.description}</div>
                                     </div>
                                     <div className="Courses-list" >
                                         {item.courses.map((sub)=>

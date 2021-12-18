@@ -21,7 +21,7 @@ export default class RegisterTable extends Component {
     }
     async componentDidMount(){
         axios
-        .get("http://localhost:3000/get-users",{withCredentials:true})
+        .get("https://temptemp132323232.herokuapp.com/get-users",{withCredentials:true})
         .then(response => {
             if(response.status===200){
                 this.setState({

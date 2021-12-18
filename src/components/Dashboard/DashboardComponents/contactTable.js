@@ -21,7 +21,7 @@ export default class ContactTable extends Component {
     }
     async componentDidMount(){
         axios
-        .get("http://localhost:3000/get-contact",{withCredentials:true})
+        .get("https://temptemp132323232.herokuapp.com/get-contact",{withCredentials:true})
         .then(response => {
             if(response.status===200){
                 this.setState({

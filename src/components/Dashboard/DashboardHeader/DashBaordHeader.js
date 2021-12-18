@@ -87,7 +87,7 @@ import axios from 'axios';
                     onClick={(e)=>{
                         e.preventDefault();
                         axios
-                        .get("http://localhost:3000/logout",{ withCredentials: true })
+                        .get("https://temptemp132323232.herokuapp.com/logout",{ withCredentials: true })
                         .then(response => {
                             if(response.status===200){
                                 dispatch({type:"USER",payload:false});

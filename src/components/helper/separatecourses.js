@@ -50,7 +50,7 @@ export const PhonicsLevel = [
     {
         id:3,
         name:"Diamond",
-        description:"",
+        description:"Our Diamond course creates phonics champions. The focus is to bring up kids to be a super speller, reader and writer.",
         level:"Phonics",
         courses : [ 
             {id:1,name:"diamond",list:"Revision of 42 sounds and alternative spellings"},
