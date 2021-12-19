@@ -36,13 +36,13 @@ const handleSubmit = (event) => {
         firstName : fName,
         lastName : lName
     };
-    axios("https://testapic.herokuapp.com/signup-oauth",{
+    fetch("https://testapic.herokuapp.com/signup-oauth",{
         method:"POST",
-        data:JSON.stringify(data1),
+        body:JSON.stringify(data1),
         headers: {
             'Content-Type': 'application/json',
         },
-        withCredentials:true,
+        credentials:'include',
     })
     .then((data1)=>{
         console.log(data1);
