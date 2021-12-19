@@ -48,9 +48,13 @@ const handleSubmit = (event) => {
         console.log(data1);
         if(data1.status===400){
             seterror(true);
+            console.log("error")
         }else if(data1.status===200){
             dispatch({type:"USER",payload:true})
-            window.location.href="https://testapic.herokuapp.com/setCookie/"+data1.data;
+            data1.text().then((body)=>{
+                console.log(body)
+                window.location.href="https://testapic.herokuapp.com/setCookie/"+body;
+            })
             setsuccess(true);
         }
         return data1.text()
