@@ -14,12 +14,15 @@ const ContactBox = styled.div`
     padding:0 5%; 
     @media screen and (max-width:960px){
         padding:5% 0;
-        flex-direction:column;
+        flex-direction:column-reverse;
         row-gap:10px;
     }
 `
 const ContactLeft = styled.div`
 letter-spacing:3px;
+@media screen and (max-width:960px){
+    text-align:center;
+}
 `
 const ContactLeftTitle = styled.h1`
 font-size:2rem;

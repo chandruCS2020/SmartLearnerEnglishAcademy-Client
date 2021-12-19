@@ -58,7 +58,7 @@ function App() {
           </React.Fragment>
         </Switch>
         
-        <ScrollToTops smooth style={{backgroundColor:'#002347',padding:'3px'}} component={<MySVG />} />
+        <ScrollToTops smooth style={{backgroundColor:'#002347',padding:'3px',right:'20px',bottom:'20px'}} component={<MySVG />} />
         
         </ScrollToTop>
         

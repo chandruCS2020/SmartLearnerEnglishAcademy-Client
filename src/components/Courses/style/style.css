@@ -94,6 +94,12 @@
     .Courses-head-card{
         padding: 100px 5%;
     }
+    .Section_head{
+        font-size: 2.5rem;
+    }
+    .course-title{
+        font-size: 2rem;
+    }
     
 }
 @media screen and (max-width:540px)

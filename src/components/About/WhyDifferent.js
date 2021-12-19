@@ -33,7 +33,10 @@ padding:5px;
 const BodyTitle = styled.h1`
     font-size:2rem;
     color:#006fbf;
-    margin-bottom:20px
+    margin-bottom:20px;
+    @media only screen and (max-width: 800px) {
+        font-size:1.5rem;
+      }
 `
 const Img = styled.img`
     width:500px;

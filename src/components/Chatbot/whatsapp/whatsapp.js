@@ -3,10 +3,11 @@ import WhatsappSharpIcon from '@mui/icons-material/WhatsappSharp';
 import styled from 'styled-components';
 const WhatsappBot = styled.div`
     position:fixed;
-    bottom:40px;
-    left:40px;
+    bottom:70px;
+    right:20px;
     padding:10px;
-    background-color:green;    
+    background-color:green;
+    border-radius:5px;    
 `
 function whatsapp() {
     return (
