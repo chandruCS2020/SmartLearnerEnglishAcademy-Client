@@ -14,7 +14,6 @@ const HeadTitle = styled.div`
 const Title = styled.h1`
     font-size: 3rem;
     color: #002347;
-
 `
 const TitleSpan = styled.span`
     color:#006FBF;
@@ -23,6 +22,7 @@ const BodyDiff = styled.div`
 margin-top:50px;
 display:flex;
 justify-content:space-between;
+row-gap:50px;
 @media only screen and (max-width: 1150px) {
     flex-direction:column;
   }
@@ -36,7 +36,10 @@ const BodyTitle = styled.h1`
     margin-bottom:20px
 `
 const Img = styled.img`
-    
+    width:500px;
+    @media only screen and (max-width: 800px) {
+        width:100%;
+      }
 `
 const List = styled.ul`
     display:flex;

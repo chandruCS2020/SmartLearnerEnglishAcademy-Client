@@ -52,7 +52,7 @@ function Test() {
     };
     async function getData(){
         axios
-        .get("https://temptemp132323232.herokuapp.com//testimonials",{withCredentials:true})
+        .get("https://testapic.herokuapp.com/testimonials",{withCredentials:true})
         .then(response => {
             if(response.status===200){
                 settestimonials(response.data)
@@ -103,7 +103,7 @@ function Test() {
                     justifyContent="space-evenly"
                     alignItems="center"
                     >
-                        <Avatar  sx={{width: 100 ,height: 100 ,fontSize:60,textTransform:'uppercase'}}>{elem.name[0]}</Avatar>
+                        <Avatar  sx={{width: 100 ,height: 100 ,fontSize:60,textTransform:'uppercase',backgroundColor:'purple'}}>{elem.name[0]}</Avatar>
                     </Grid>
                         <CardContent>
                             <Typography gutterBottom variant="h4" component="div" sx={{textTransform:'capitalize'}}>

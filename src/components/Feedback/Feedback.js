@@ -55,7 +55,7 @@ const handleSubmit = (event) => {
         feedback : feedback,
         rating : rating
     };
-    fetch("https://temptemp132323232.herokuapp.com/Feedback",{
+    fetch("https://testapic.herokuapp.com/Feedback",{
         credentials: 'include', // It can be include, same-origin, omit
         method: 'POST', // or 'PUT'
         headers: {"Content-type": "application/json;charset=UTF-8"},

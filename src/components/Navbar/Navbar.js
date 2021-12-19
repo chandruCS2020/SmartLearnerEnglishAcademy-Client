@@ -28,49 +28,32 @@ function Navbar() {
             return(
                 <>
                     <li className="nav-items">  
-                        <NavLink to='/'  exact activeClassName="navbar__link--active" className="nav-links">
+                        <NavLink to='/' onClick={handleClick} exact activeClassName="navbar__link--active" className="nav-links">
                             Home
                         </NavLink>
                     </li>
                     <li className="nav-items">  
-                        <NavLink to='/About'  activeClassName="navbar__link--active" className="nav-links">
+                        <NavLink to='/About'  onClick={handleClick} exact activeClassName="navbar__link--active" className="nav-links">
                             About
                         </NavLink>
                     </li>
                     <li className="nav-items submenu">  
-                        <NavLink to='/Courses' activeClassName="navbar__link--active" className="nav-links">
+                        <NavLink to='/Courses'  onClick={handleClick} exact activeClassName="navbar__link--active" className="nav-links">
                             Courses
                         </NavLink>
-                        <ul className="dropdown">
-                            <li>
-                            <NavLink to='/Courses/Phonix' activeClassName="navbar__link--active" className="nav-links">
-                                Phonics
-                            </NavLink>
-                            </li>
-                            <li>
-                            <NavLink to='/Courses/Rookie'  activeClassName="navbar__link--active" className="nav-links">
-                                Rookie
-                            </NavLink>
-                            </li>
-                            <li>
-                            <NavLink to='/Courses/Advanced' activeClassName="navbar__link--active" className="nav-links">
-                                Advanced
-                            </NavLink>
-                            </li>
-                        </ul>
                     </li>
                     <li className="nav-items">  
-                        <NavLink to='/Contact' activeClassName="navbar__link--active" className="nav-links">
+                        <NavLink to='/Contact'  onClick={handleClick} exact activeClassName="navbar__link--active" className="nav-links">
                             Contact
                         </NavLink>
                     </li>
                     <li className="nav-items">  
-                        <NavLink to='/SignIn' activeClassName="navbar__link--active" className="nav-links">
+                        <NavLink to='/SignIn'  onClick={handleClick} exact activeClassName="navbar__link--active" className="nav-links">
                             Login
                         </NavLink>
                     </li>
                     <li className="nav-items">  
-                        <NavLink to='/signup-email' activeClassName="navbar__link--active" className="nav-links">
+                        <NavLink to='/signup-email'  onClick={handleClick} exact activeClassName="navbar__link--active" className="nav-links">
                             Register
                         </NavLink>
                     </li>
@@ -81,22 +64,22 @@ function Navbar() {
             return(
                 <>
                     <li className="nav-items">  
-                        <NavLink to='/'  exact activeClassName="navbar__link--active" className="nav-links">
+                        <NavLink to='/'   onClick={handleClick} exact activeClassName="navbar__link--active" className="nav-links">
                             Home
                         </NavLink>
                     </li>
                     <li className="nav-items">  
-                        <NavLink to='/About'  activeClassName="navbar__link--active" className="nav-links">
+                        <NavLink to='/About'  onClick={handleClick} exact activeClassName="navbar__link--active" className="nav-links">
                             About
                         </NavLink>
                     </li>
                     <li className="nav-items submenu">  
-                        <NavLink to='/Courses' activeClassName="navbar__link--active" className="nav-links">
+                        <NavLink to='/Courses'  onClick={handleClick} exact activeClassName="navbar__link--active" className="nav-links">
                             Courses
                         </NavLink>
                     </li>
                     <li className="nav-items">  
-                        <NavLink to='/Contact' activeClassName="navbar__link--active" className="nav-links">
+                        <NavLink to='/Contact'  onClick={handleClick} exact activeClassName="navbar__link--active" className="nav-links">
                             Contact
                         </NavLink>
                     </li>
@@ -104,18 +87,19 @@ function Navbar() {
                     <li className="nav-items">  
                         <p onClick={(e)=>{
                             e.preventDefault();
-                            axios
-                            .get("https://temptemp132323232.herokuapp.com/logout",{ withCredentials: true })
-                            .then(response => {
-                                if(response.status===200){
-                                    dispatch({type:"USER",payload:false});
-                                }else{
-                                    dispatch({type:"USER",payload:true});
-                                }
-                            })
-                            .catch(error => {
-                            console.log("check login error",error);
-                            });
+                            window.location.href="https://testapic.herokuapp.com/Logout";
+                            // axios
+                            // .get("https://testapic.herokuapp.com/logout",{ withCredentials: true })
+                            // .then(response => {
+                            //     if(response.status===200){
+                            //         dispatch({type:"USER",payload:false});
+                            //     }else{
+                            //         dispatch({type:"USER",payload:true});
+                            //     }
+                            // })
+                            // .catch(error => {
+                            // console.log("check login error",error);
+                            // });
                             
                         }}  className="nav-links logout">
                             Logout

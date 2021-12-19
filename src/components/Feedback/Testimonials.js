@@ -15,7 +15,7 @@ export default class Testimonials extends Component {
     }
     async componentDidMount(){
         axios
-        .get("https://temptemp132323232.herokuapp.com/testimonials",{withCredentials:true})
+        .get("https://testapic.herokuapp.com/testimonials",{withCredentials:true})
         .then(response => {
             if(response.status===200){
                 this.setState({

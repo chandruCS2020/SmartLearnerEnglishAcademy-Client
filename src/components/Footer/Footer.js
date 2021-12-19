@@ -48,8 +48,8 @@ function Footer() {
             <div className="footer-social">
                 <h5 className="foot-social-head">Follow Us On</h5>
                 <div className="social-links">
-                    <a href={url} className="instagram social" rel="noreferrer" target="_blank"><FaInstagram /></a>
-                    <a href={url} className="facebook social" rel="noreferrer" target="_blank"><FaFacebook /></a>
+                    <a href='https://www.instagram.com/smartlearnenglishacademy_sea/' className="instagram social" rel="noreferrer" target="_blank"><FaInstagram /></a>
+                    <a href='https://www.facebook.com/Smartlearn-English-Academy-SEA-129448475281427/' className="facebook social" rel="noreferrer" target="_blank"><FaFacebook /></a>
                     <a href={url} className="twitter social" rel="noreferrer" target="_blank"><FaTwitter /></a>
                     <a href={url} className="linkedin social" rel="noreferrer" target="_blank"><FaLinkedin /></a>
                 </div>

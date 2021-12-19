@@ -110,6 +110,9 @@
     .feedback{
         flex-direction: column;
     }
+    .Section{
+        padding: 10% 5%;
+    }
     
     
 }

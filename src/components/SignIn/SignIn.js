@@ -11,7 +11,7 @@ import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import GoogleIcon from '@mui/icons-material/Google';
 import logo from '../images/logo1.png'
-import { useHistory } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import { Alert } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import { UserContext } from '../../App';
@@ -49,7 +49,7 @@ const handleSubmit = (event) => {
         email : emails,
         password : passwords
     };
-    axios("https://temptemp132323232.herokuapp.com/login-email",{
+    axios("https://testapic.herokuapp.com/login-email",{
         method:"POST",
         data:JSON.stringify(data1),
         headers: {
@@ -58,9 +58,10 @@ const handleSubmit = (event) => {
         withCredentials:true,
     })
     .then((data1)=>{
+        console.log(data1);
         if(data1.status=== 200){
-            dispatch({type:"USER",payload:true})
-            history.push("/");
+            dispatch({type:"USER",payload:true});
+            window.location.href="https://testapic.herokuapp.com/setCookie/"+data1.data;
             if(data1.data==='admin'){
                 history.push("/Dashboard/Admin")
             }
@@ -129,12 +130,14 @@ return (
             variant="contained"
             sx={{ mt: 3, mb: 2 }}
             >
-            Sign Up
+            Sign in 
             </Button>
             <Button type="button" onClick={(e) => {
                 e.preventDefault();
                 axios
-                .get("https://temptemp132323232.herokuapp.com/google-auth-login")
+                .get("https://testapic.herokuapp.com/google-auth-login", {
+                    crossDomain: true
+                })
                 .then(response =>{
                     console.log(response.data)
                     window.location.href=response.data;

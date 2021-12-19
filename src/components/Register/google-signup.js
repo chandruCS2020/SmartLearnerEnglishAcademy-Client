@@ -11,6 +11,7 @@ import { Alert } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import { Redirect } from 'react-router-dom';
 import { UserContext } from '../../App';
+import axios from 'axios';
 
 
 
@@ -35,20 +36,21 @@ const handleSubmit = (event) => {
         firstName : fName,
         lastName : lName
     };
-    fetch("https://temptemp132323232.herokuapp.com/signup-oauth",{
-        method: 'POST', // or 'PUT'
+    axios("https://testapic.herokuapp.com/signup-oauth",{
+        method:"POST",
+        data:JSON.stringify(data1),
         headers: {
-            "Content-type": "application/json;charset=UTF-8",
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data1),
-        credentials:"include"
+        withCredentials:true,
     })
     .then((data1)=>{
-        // console.log(data1);
+        console.log(data1);
         if(data1.status===400){
             seterror(true);
         }else if(data1.status===200){
             dispatch({type:"USER",payload:true})
+            window.location.href="https://testapic.herokuapp.com/setCookie/"+data1.data;
             setsuccess(true);
         }
         return data1.text()

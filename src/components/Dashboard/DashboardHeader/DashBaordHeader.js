@@ -86,20 +86,7 @@ import axios from 'axios';
                     sx={{cursor:'pointer'}}
                     onClick={(e)=>{
                         e.preventDefault();
-                        axios
-                        .get("https://temptemp132323232.herokuapp.com/logout",{ withCredentials: true })
-                        .then(response => {
-                            if(response.status===200){
-                                dispatch({type:"USER",payload:false});
-                                history.push("/");
-                            }else{
-                                dispatch({type:"USER",payload:true});
-                            }
-                        })
-                        .catch(error => {
-                        console.log("check login error",error);
-                        });
-                        
+                        window.location.href="https://testapic.herokuapp.com/Logout";
                     }}
                 >
                     Logout

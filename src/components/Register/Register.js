@@ -14,6 +14,8 @@ import Stack from '@mui/material/Stack';
 import logo from '../images/logo1.png';
 import { Redirect } from 'react-router-dom';
 import { UserContext } from '../../App';
+import axios from "axios"
+
 
 function Copyright(props) {
 return (
@@ -29,6 +31,12 @@ return (
 }
 
 const theme = createTheme();
+
+
+async function parseResponse(data){
+    let body=await data.text();
+    return {body,status:data.status};
+}
 
 
 function SignUp() {
@@ -54,20 +62,25 @@ const handleSubmit = (event) => {
         email : emails,
         password : passwords
     };
-    fetch("https://temptemp132323232.herokuapp.com/signup-email",{
-        method: 'POST', // or 'PUT'
+    fetch("https://testapic.herokuapp.com/signup-email",{
+        method:"POST",
+        body:JSON.stringify(data1),
         headers: {
-            "Content-type": "application/json;charset=UTF-8",
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data1),
-        credentials:"include"
+        credentials:'include',
     })
     .then((data1)=>{
-        // console.log(data1);
-        if(data1.status===400){
+        console.log(data1);
+        if(data1.status===403){
             seterror(true);
         }else if(data1.status===200){
             dispatch({type:"USER",payload:true})
+            data1.text().then((body)=>{
+                console.log(body)
+                window.location.href="https://testapic.herokuapp.com/setCookie/"+body;
+            })
+            
             setsuccess(true);
         }
         return data1.text()
@@ -79,7 +92,7 @@ const handleSubmit = (event) => {
     
     })
     .catch((err)=>{
-        console.log(err.message)
+        console.log(err)
     })
 };
     var errorDiv;

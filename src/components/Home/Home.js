@@ -11,6 +11,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 function Home() {
     return (
         <>
+        <img src={'https://testapic.herokuapp.com/test'} alt="" />
         <section className="Section section-1">
             <div className="home-quotes">
                 <p className="company-slogan-1">

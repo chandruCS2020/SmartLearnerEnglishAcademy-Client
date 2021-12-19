@@ -91,7 +91,9 @@
     .Courses-list{
         flex-direction: column;
     }
-    
+    .Courses-head-card{
+        padding: 100px 5%;
+    }
     
 }
 @media screen and (max-width:540px)
@@ -101,6 +103,9 @@
     }
     .course-link{
         width: 60%;
+    }
+    .Courses-head-card{
+        padding-top: 200px;
     }
 }
 

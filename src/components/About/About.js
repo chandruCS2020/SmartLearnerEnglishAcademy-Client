@@ -1,7 +1,8 @@
 import React from 'react'
 import { Aboutlist } from '../helper/AboutList';
 import './style.css';
-import cdimg from '../images/english.jpeg'
+import cdimg from '../images/english.jpg';
+import admin  from '../images/vigneshwari.png'
 import { Link } from 'react-router-dom';
 function About() {
     return (
@@ -38,6 +39,21 @@ function About() {
                         </div>
                     ))}
                     
+                </div>
+                <div class="about-founder">
+                    <div class="left-col-img">
+                        <img src={admin} alt="Founder Chandru" />
+                    </div>
+                    <div class="right-col-about">
+                        <div class="founder-name"><span>Vigneshwari  Rajendran</span></div>
+                        <div class="founder-content" style={{textAlign: 'justify', textJustify: 'inter-word'}}>
+                            <p>
+                            Vigneshwari is an Electronics and Communications Engineering graduate. As  her passion is to become a world class  Communicative English Trainer, She decided to pursue her heart' s desire rather than to join a mundane job. Even though she has got a lucrative offer in a leading IT company , she rejected it and joined a communicative english traning institute as trainer and worked in various schools across the South India.(Kerala, Karnataka and Tamilnadu).  With more than 5 years experience, she has implemented many creative and fun filled learning processes and improvised pedagogy.  
+
+She is a certified phonics trainer and continuosly strives to be innovative in her expertise.    
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

@@ -27,7 +27,7 @@
     line-height: 30px;
 }
 
-.company-goal{
+.company-goal,.about-founder{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -85,6 +85,32 @@
     line-height: 30px;
     color: #fff;
 }
+.about-founder{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 50px;
+}
+.left-col-img img{
+        width:400px;
+        height:400px;
+}
+.right-col-about{
+    max-width: 500px;
+    position: relative;
+}
+.founder-name{
+    font-size: 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #006FBF;
+    margin-bottom: 10px;
+}
+.founder-content{
+    line-height: 25px;
+    color: rgba(0, 0, 0, 0.753);
+}
 @media screen and (max-width:1200px) {
     .about{
         padding: 40% 7%;
@@ -110,5 +136,9 @@
     }
     .company__details__description .Link{
         font-size: 17px!important;
+    }
+    .left-col-img img{
+        width:320px;
+        height: 320px;
     }
 }

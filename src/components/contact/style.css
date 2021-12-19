@@ -18,3 +18,15 @@
 .secondary-name{
     color: #006FBF;
 }
+.social-links{
+    margin: 30px 0;
+}
+.social-links .social{
+    margin: 15px 25px 15px 0;
+    font-size: 30px;
+    color:#006FBF ;
+    transition: all 0.3s ease-in-out;
+}
+.social-links .social:hover{
+    color: #002347;
+}

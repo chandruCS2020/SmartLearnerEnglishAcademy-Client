@@ -32,7 +32,7 @@ export default class Countdetails extends Component {
 
     async componentDidMount(){
         axios
-        .get("https://temptemp132323232.herokuapp.com/count",
+        .get("https://testapic.herokuapp.com/count",
         {
           withCredentials:true,
         })
