@@ -13,6 +13,7 @@ function Home() {
         <>
         <section className="Section section-1">
             <div className="home-quotes">
+                <h1 className="company__name">Smartlearn english academy</h1>
                 <p className="company-slogan-1">
                     <span className="f-letter1">S</span>PEAK |  
                     <span className="f-letter1"> E</span>XCEL |  

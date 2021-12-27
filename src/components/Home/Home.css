@@ -35,7 +35,12 @@
 .Quotes{
     color: #002347;
     letter-spacing: 2px;
+    font-size: 35px;
+}
+.company__name{
+    color: #002347;
     font-size: 40px;
+    text-transform: uppercase;
 }
 .home-buttons{
     display: flex;
@@ -113,11 +118,17 @@
     .Section{
         padding: 10% 5%;
     }
+    .company__name{
+        font-size: 30px;
+    }
     
     
 }
 @media screen and (max-width:540px)
 {
+    .home-quotes{
+        padding-top:70px;
+    }
     .home-buttons{
         flex-direction: column!important;
         row-gap: 10px;
@@ -131,5 +142,14 @@
     }
     .course-link{
         width: 60%;
+    }
+    .company-slogan-1{
+        font-size: 20px;
+    }
+    .Quotes{
+        font-size: 30px;
+    }
+    .company__name{
+        font-size: 25px;
     }
 }

@@ -1,5 +1,5 @@
 import './App.css';
-import React,{ createContext , Fragment, useReducer } from 'react';
+import React,{ createContext , Fragment, useEffect, useReducer } from 'react';
 import Register from './components/Register/Register';
 import SignIn from './components/SignIn/SignIn';
 import Navbar from './components/Navbar/Navbar';
@@ -22,12 +22,16 @@ import googleSignup from './components/Register/google-signup';
 import About from './components/About/About';
 import Whatsapp from './components/Chatbot/whatsapp/whatsapp';
 import ContactHome from './components/contact/ContactHome';
+import ReactGA from 'react-ga';
 
 export const UserContext = createContext();
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
-  
+  useEffect(() => {
+      ReactGA.initialize('G-JR4CHZ98YV');
+      ReactGA.pageview(window.location.pathname + window.location.search);
+  }, [])
   return (
     <>
       <UserContext.Provider value={{state,dispatch}}>
