@@ -164,7 +164,11 @@
     color: #fff;
 }
 .courses-i-ls-title{
+    font-size: 40px;
     color: #002347;
+}
+.course-i-ls-description{
+    font-size: 20px;
 }
 .course-i-ls-description:hover{
     color: indigo;
