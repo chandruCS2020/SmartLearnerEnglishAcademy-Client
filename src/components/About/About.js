@@ -13,7 +13,7 @@ function About() {
                 </div>
             </section>
             <div className="about">
-                <div className="company-details">
+                <div className="company-details about_section">
                     <div className="comapany__details__img">
                         <img src={cdimg} alt="comapny img" />
                     </div>
@@ -25,7 +25,7 @@ function About() {
                         <div className="serNever" style={{textAlign:'center',marginTop:10}}><Link to='/' className='Link' style={{fontSize:20}}>SEA NEVER SETTLES</Link></div>
                     </div>
                 </div>
-                <div className="company-goal">
+                <div className="company-goal about_section">
                     {Aboutlist.map(elem =>(
                         <div className={elem.className} key={elem.id}>
                             <div className="company__logo">
@@ -40,7 +40,7 @@ function About() {
                     ))}
                     
                 </div>
-                <div class="about-founder">
+                <div class="about-founder about_section">
                     <div class="left-col-img">
                         <img src={admin} alt="Founder Chandru" />
                     </div>

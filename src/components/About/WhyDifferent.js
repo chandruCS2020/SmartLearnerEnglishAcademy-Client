@@ -14,6 +14,9 @@ const HeadTitle = styled.div`
 const Title = styled.h1`
     font-size: 3rem;
     color: #002347;
+    @media only screen and (max-width: 1150px) {
+        font-size:2.5rem;
+      }
 `
 const TitleSpan = styled.span`
     color:#006FBF;
@@ -25,6 +28,7 @@ justify-content:space-between;
 row-gap:50px;
 @media only screen and (max-width: 1150px) {
     flex-direction:column;
+    margin-top:10px;
   }
 `
 const ChooseUs = styled.div`

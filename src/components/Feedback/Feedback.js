@@ -90,7 +90,7 @@ var errorDiv;
         {response}
     </Alert>
     }
-const [value, setValue] = React.useState(1);
+const [value, setValue] = React.useState(3);
 const [hover, setHover] = React.useState(-1);
 return (
     <ThemeProvider theme={theme}>
@@ -120,7 +120,7 @@ return (
                     required
                     fullWidth
                     id="firstName"
-                    label="First Name"
+                    label="Name"
                     autoFocus
                     />
                 </Grid>

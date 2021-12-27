@@ -59,10 +59,16 @@
     outline: none;
     text-decoration: none;
 }
-.Learn-more{
+.Learn-more,.See-Cources:hover{
     color: #fdc632;
     background-color: #002347;
 }
+.Learn-more:hover{
+    background-color: transparent;
+    color: #002347;
+    border: 1px solid #002347;
+}
+
 .See-Cources{
     color: #002347;
     background-color: #fdc632;

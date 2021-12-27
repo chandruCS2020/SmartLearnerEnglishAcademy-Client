@@ -86,7 +86,7 @@ return (
                     required
                     fullWidth
                     id="firstName"
-                    label="First Name"
+                    label="Name"
                     {...register('name')}
                     autoFocus
                     />
@@ -116,7 +116,6 @@ return (
                 </Grid>
                 <Grid item xs={12}>
                     <TextField
-                    required
                     fullWidth
                     name="subject"
                     label="Subject"

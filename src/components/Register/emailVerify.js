@@ -80,7 +80,7 @@ var errorDiv;
 
 return (
     
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} >
     <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -141,6 +141,18 @@ return (
                 </Avatar>
                 Sign in with Google
             </Button>
+            <Grid container justifyContent="space-between">
+            <Grid item>
+                    <Link href="/" variant="body2">
+                        Back to Home
+                    </Link>
+                </Grid>
+            <Grid item>
+                <Link href="/Signin" variant="body2">
+                Already have an account
+                </Link>
+            </Grid>
+            </Grid>
         </Box>
         </Box>
         <Copyright sx={{ mt: 5 ,mb: 5}} />

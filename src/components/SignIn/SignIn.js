@@ -149,12 +149,17 @@ return (
                 </Avatar>
                 Sign in with Google
             </Button>
-            <Grid container justifyContent="flex-end">
-            <Grid item>
-                <Link href="/signup-email" variant="body2">
-                    Create New Account
-                </Link>
-            </Grid>
+            <Grid container justifyContent="space-between">
+                <Grid item>
+                    <Link href="/" variant="body2">
+                        Back to Home
+                    </Link>
+                </Grid>
+                <Grid item>
+                    <Link href="/signup-email" variant="body2">
+                        Create New Account
+                    </Link>
+                </Grid>
             </Grid>
         </Box>
         </Box>
