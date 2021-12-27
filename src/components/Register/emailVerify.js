@@ -14,6 +14,7 @@ import logo from '../images/logo1.png';
 import axios from 'axios';
 import { Alert } from '@mui/material';
 import Stack from '@mui/material/Stack';
+import { Field }from 'reactjs-input-validator';
 
 function Copyright(props) {
 return (
@@ -33,30 +34,52 @@ const theme = createTheme();
 export default function SignUp() {
     
     const [success, setsuccess] = useState(false);
+    const [emailValue, setemailValue] = useState("");
+    const [response, setresponse] = useState('');
+    const [error, seterror] = useState(false);
 const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     // eslint-disable-next-line no-console
-    const 
-    emails= data.get('email');
-    fetch("https://testapic.herokuapp.com/signup-email?email="+emails,{
-        method:"GET",
-        mode:"no-cors"
-    })
-    .then((data1)=>{
-        setsuccess(true);
-    })
-    .catch((err)=>{
-        setsuccess(false);
-    })
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(emailValue))
+    {
+        const 
+        emails= data.get('email');
+        fetch("https://testapic.herokuapp.com/signup-email?email="+emails,{
+            method:"GET",
+            mode:"no-cors"
+        })
+        .then((data1)=>{
+            setsuccess(true);
+            console.log(data1);
+        })
+        .catch((err)=>{
+            setsuccess(false);
+        })
+        setresponse("Verification Link has sent to Mail");
+    }else if(emailValue===''){
+        seterror(true);
+        setresponse("You can't leave empty");
+    }
+    else{
+        seterror(true)
+        setresponse("Enter Valid Email Address")
+    }
+    
 };
 var errorDiv;
     if(success){
         errorDiv= <Alert variant="outlined" className="Message" severity="success">
-                    Verification Link has sent to Mail
+                    {response}
+                </Alert>
+    }else if(error){
+        errorDiv= <Alert variant="outlined" className="Message" severity="error">
+                    {response}
                 </Alert>
     }
+
 return (
+    
     <ThemeProvider theme={theme}>
     <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -76,9 +99,9 @@ return (
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
                 <Grid item xs={12}>
-                <Stack sx={{ mt:0 ,mb:2}} spacing={2}>
-            {errorDiv}
-        </Stack>
+                    <Stack sx={{ mt:0 ,mb:2}} spacing={2}>
+                        {errorDiv}
+                    </Stack>
                 </Grid>
             <Grid item xs={12}>
                 <TextField
@@ -88,6 +111,7 @@ return (
                 label="Email Address"
                 name="email"
                 autoComplete="email"
+                onChange={(e)=>{setemailValue(e.target.value)}}
                 />
             </Grid>
             
