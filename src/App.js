@@ -23,6 +23,7 @@ import About from './components/About/About';
 import Whatsapp from './components/Chatbot/whatsapp/whatsapp';
 import ContactHome from './components/contact/ContactHome';
 import ReactGA from 'react-ga';
+import Registration from './components/CourseRegistration/Registration';
 
 export const UserContext = createContext();
 
@@ -45,7 +46,7 @@ function App() {
           <Route path='/Register' exact component={Register} />
           <Route path='/Feedback' exact component={Feedback} />
           <Route path='/Google-oauth-signup' exact component={googleSignup} />
-          
+          <Route path='/register-course' exact component={Registration} />
           <React.Fragment>
           <div>
             <Navbar />

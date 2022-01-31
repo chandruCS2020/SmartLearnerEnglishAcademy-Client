@@ -2,7 +2,7 @@ import React from 'react'
 import { Aboutlist } from '../helper/AboutList';
 import './style.css';
 import cdimg from '../images/english.jpg';
-import admin  from '../images/vigneshwari.png'
+import admin  from '../images/founder.jpg'
 import { Link } from 'react-router-dom';
 function About() {
     return (
@@ -41,17 +41,30 @@ function About() {
                     
                 </div>
                 <div class="about-founder about_section">
-                    <div class="left-col-img">
-                        <img src={admin} alt="Founder Chandru" />
+                    <div className="left_col">
+                        <img src={admin} alt="founder" />
                     </div>
-                    <div class="right-col-about">
-                        <div class="founder-name"><span>Vigneshwari  Rajendran</span></div>
-                        <div class="founder-content" style={{textAlign: 'justify', textJustify: 'inter-word'}}>
-                            <p>
-                            Vigneshwari is an Electronics and Communications Engineering graduate. As  her passion is to become a world class  Communicative English Trainer, She decided to pursue her heart' s desire rather than to join a mundane job. Even though she has got a lucrative offer in a leading IT company , she rejected it and joined a communicative english traning institute as trainer and worked in various schools across the South India.(Kerala, Karnataka and Tamilnadu).  With more than 5 years experience, she has implemented many creative and fun filled learning processes and improvised pedagogy.  
-
-She is a certified phonics trainer and continuosly strives to be innovative in her expertise.    
-                            </p>
+                    <div className="right_col">
+                        <div className="founder_Name">
+                            <h1 className="firstName">Vigneshwari</h1>
+                            <h1 className="lastName">Rajendran</h1>
+                        </div>
+                        <div className="founder_details_box">
+                            <div className="left_details">
+                                <span className="about_back">ABOUT</span>
+                            </div>
+                            <div className="right_details">
+                                <p className="founder_details">
+                                    Vigneshwari is an Electronics and Communications Engineering graduate.
+                                    As  her passion is to become a world class  Communicative English Trainer, 
+                                    She decided to pursue her heart' s desire rather than to join a mundane job. 
+                                    Even though she has got a lucrative offer in a leading IT company , 
+                                    she rejected it and joined a communicative english traning institute as trainer and worked in various schools across the South India.
+                                    (Kerala, Karnataka and Tamilnadu).
+                                    With more than 5 years experience, she has implemented many creative and fun filled learning processes and improvised pedagogy.  
+                                    She is a certified phonics trainer and continuosly strives to be innovative in her expertise.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,71 @@
+.registration{
+    background: rgba(0, 111, 191,0.7);
+    padding: 50px 10px;
+}
+.regitration-form{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: #006FBF;
+    border-radius: 5px;
+}
+.register_title {
+    padding: 20px 0;
+    text-align: center;
+    letter-spacing: 2px;
+    color: #fff;
+    text-shadow: 2px 8px 6px rgba(0,0,0,0.2),
+                    0px -5px 35px rgba(255,255,255,0.3);
+}
+.register_body{
+    padding: 20px 0;
+}
+.twoContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-basis: 50%;
+}
+.input_container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+.input_container >label{
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+.input_container > input,.input_container >select,textarea,.input_container > select *{
+    padding: 10px;
+    outline: 0;
+    font-size: 1rem;
+    border-radius: 3px;
+    border: 2px solid transparent;
+}
+.btn{
+    margin-top: 10px;
+    margin-left: 20px;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    background-color: #2a3655;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: center;
+}
+@media screen and (max-width:575px) {
+    .twoContainer{
+        flex-basis: 100%;
+        flex-direction: column;
+    }
+    .regitration-form{
+        padding: 50px 15px;
+    }
+}
