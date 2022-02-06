@@ -8,7 +8,7 @@ export default function FormTable() {
     useEffect(() => {
         const getData = async()=>{
             try{
-                const res = await axios.get('https://testapic.herokuapp.com/get-forms');
+                const res = await axios.get('https://testapic.herokuapp.com/get-forms',{withCredentials:true});
                 setdata(res.data)
                 console.log(res.data);
             }catch(err){

@@ -165,7 +165,7 @@
     }
     .company__details__description{
         padding: 40px 0;
-        text-align: center;
+        text-align: justify;
     }
     .company__goal__main{
         flex-basis: 100%;
@@ -193,7 +193,7 @@
         width: 100%;
     }
     .about_section{
-        padding: 10% 5%;
+        padding: 150px 5%;
     }
     .left_col,.right_col{
         width: 100%;
@@ -201,5 +201,6 @@
     .right_col{
         margin-top: -70px;
     }
+    
     
 }

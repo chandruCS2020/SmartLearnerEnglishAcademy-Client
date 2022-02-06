@@ -39,8 +39,13 @@ function CoursesPath() {
                                     <Icon style={{fontSize: 15}} className='Duration-month'>Duration : <CalendarTodayTwoToneIcon className='icon'/> 6 Months</Icon>
                             </p>
                         </div>
+                        <div className='course_btnnn'>
                         <div className="courses-i-buttons"> 
                         <Link to={elem.Links} className='courses-i-link duration-btn'>Learn More</Link>
+                        </div>
+                        <div className="courses-i-buttons"> 
+                                <Link to='/register-course' className='courses-i-link duration-btn'>Register</Link>
+                        </div>
                         </div>
                     </div>
                     

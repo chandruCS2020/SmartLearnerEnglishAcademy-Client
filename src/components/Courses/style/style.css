@@ -118,6 +118,9 @@
     .Courses-head-card{
         padding-top: 200px;
     }
+    .Section_head{
+        font-size: 2rem;
+    }
 }
 
 
@@ -148,7 +151,12 @@
     display: flex;
     justify-content: space-between;
     border: 5px solid #002347;
-
+    flex-direction: column;
+}
+.course_btnnn{
+    margin-top: 20px;
+    display: flex;
+    column-gap: 10px;
 }
 .courses-1{
     background-image: url('../../images/course-1.jpg');
