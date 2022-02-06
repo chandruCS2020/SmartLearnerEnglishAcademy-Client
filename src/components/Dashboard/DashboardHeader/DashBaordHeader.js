@@ -18,6 +18,7 @@
 
 import { UserContext } from '../../../App'
 import axios from 'axios';
+import FormTable from '../DashboardComponents/formTable';
 
     function Copyright(props) {
     return (
@@ -172,6 +173,24 @@ import axios from 'axios';
                             Contact
                         </Typography>
                         <ContactTable />
+                    </Paper>
+                </Grid>
+                <Grid item xs={12} md={12} lg={12}>
+                    <Paper
+                    sx={{
+                        p: 2,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: 500,
+                    }}
+                    >
+                        <Typography 
+                        component="h1"  
+                        variant="h6" 
+                        sx={{mb:3}}>
+                            Registration
+                        </Typography>
+                        <FormTable />
                     </Paper>
                 </Grid>
                 {/* Recent Orders */}

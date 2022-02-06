@@ -60,6 +60,15 @@
     cursor: pointer;
     align-self: center;
 }
+.success{
+    background-color: green;
+    padding: 10px;
+    margin: 0 15px ;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    color: #efefef;
+    text-align: center;
+}
 @media screen and (max-width:575px) {
     .twoContainer{
         flex-basis: 100%;

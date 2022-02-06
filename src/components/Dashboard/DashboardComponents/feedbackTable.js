@@ -43,6 +43,7 @@ export default class FeedbackTable extends Component {
   render(){
       
     const { feedback } = this.state;
+    console.log(feedback);
     return (
         <TableContainer component={Paper}>
             <Table  aria-label="simple table">
