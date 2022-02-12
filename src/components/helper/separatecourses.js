@@ -35,7 +35,7 @@ export const PhonicsLevel = [
     {
         id:2,
         name:"Gold",
-        description:"Our SILVER course reinforces and consolidates the reading skills acquired already. The focus then shifts to spelling rules, spelling patterns and guided writing for the children aged between 5 to 8 years.",
+        description:"Our Gold course reinforces and consolidates the reading skills acquired already. The focus then shifts to spelling rules, spelling patterns and guided writing for the children aged between 5 to 8 years.",
         level:"Phonics",
         courses : [
             {id:1,name:"gold",list:"Revision of 42 sounds and tricky words"},

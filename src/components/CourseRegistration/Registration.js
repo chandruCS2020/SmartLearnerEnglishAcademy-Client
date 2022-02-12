@@ -102,8 +102,9 @@ export default function Registration() {
                                     <label>Phonics Courses<span>*</span></label>
                                     <select name="PhonicsCourses"  required onChange={handleChange}>
                                         <option></option>
-                                        <option value="42 SOUNDS AND BLENDING">42 SOUNDS AND BLENDING</option>
-                                        <option value="SPELLING RULES">SPELLING RULES</option>
+                                        <option value="Silver">Silver</option>
+                                        <option value="Gold">Gold</option>
+                                        <option value="Diamond">Diamond</option>
                                     </select>
                                 </div>
                                 <div className="input_container">
