@@ -105,6 +105,7 @@ export default function Registration() {
                                         <option value="Silver">Silver</option>
                                         <option value="Gold">Gold</option>
                                         <option value="Diamond">Diamond</option>
+                                        <option value="Phonics training">Phonics Training</option>
                                     </select>
                                 </div>
                                 <div className="input_container">
@@ -136,7 +137,7 @@ export default function Registration() {
                         }
                         <div className="input_container">
                             <label>State <span>*</span></label>
-                            <select name="State" defaultValue='TAMILNADU' required onChange={(e)=>{setstate(e.target.value);handleState(e)}}>
+                            <select name="State" required onChange={(e)=>{setstate(e.target.value);handleState(e)}}>
                                 <option></option>
                                 <option value="TAMILNADU">TAMILNADU</option>
                                 <option value="ANDHRA PRADESH">ANDHRA PRADESH</option>
